@@ -1,5 +1,6 @@
 using UnityEngine;
-public class RayProvider : MonoBehaviour
+
+public abstract class RayProvider : MonoBehaviour
 {
-    public Ray GetRay() => new Ray(transform.position, transform.forward);
+    public abstract Ray GetRay();
 }
