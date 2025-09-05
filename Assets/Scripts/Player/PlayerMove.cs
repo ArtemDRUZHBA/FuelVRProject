@@ -85,7 +85,7 @@ public bool canJump = true;
         Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
 
         direction = transform.TransformDirection(direction) * speedScale;
-         rb.velocity = new Vector3(direction.x, rb.velocity.y, direction.z);
+         rb.linearVelocity = new Vector3(direction.x, rb.linearVelocity.y, direction.z);
         if(canJump)
         {
 
