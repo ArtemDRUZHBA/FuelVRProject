@@ -10,13 +10,11 @@ public class ColumnHoseSetup : MonoBehaviour
         for (int i = 1; i <= hoseCount; i++)
         {
             Transform anchor = transform.FindDeepChild($"HoseStartPoint{i}");
-
             Transform nuzzle = transform.FindDeepChild($"FuelNuzzle{i}");
+            Transform end = nuzzle != null ? nuzzle.FindDeepChild($"HoseEndPoint") : null;
+            Transform exit = nuzzle != null ? nuzzle.FindDeepChild("HoseExitPoint") : null;
 
-            Transform gun = nuzzle != null ? nuzzle.FindDeepChild($"FuelNuzzle{i}") : null;
-
-
-            if (anchor == null)
+            if (anchor == null || end == null)
             {
                 Debug.LogWarning($"Не найден точки для шланга {i} в {name}");
                 continue;
@@ -28,7 +26,8 @@ public class ColumnHoseSetup : MonoBehaviour
             // Привязываем шланг
             HoseController hc = hose.GetComponent<HoseController>();
             hc.anchorPoint = anchor;
-            hc.gunPoint = gun;
+            hc.exitPoint = exit;
+            hc.hoseEndPoint = end;
         }
     }
 }

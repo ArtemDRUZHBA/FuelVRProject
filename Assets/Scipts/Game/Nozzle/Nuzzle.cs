@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(MeshCollider), typeof(Rigidbody))]
-public class Nozzle : MonoBehaviour, INozzle
+public class Nuzzle : MonoBehaviour, INuzzle
 {
     [SerializeField] public Transform restPoint;
     [SerializeField] private Rigidbody rb;
