@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public interface INuzzle : IInteractable
+public interface INozzle : IInteractable
 {
     void AttachTo(Transform targetHand);
     void ReturnToRest();

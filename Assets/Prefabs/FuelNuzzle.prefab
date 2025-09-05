@@ -696,7 +696,9 @@ GameObject:
   - component: {fileID: 6263370888496423198}
   - component: {fileID: 2078969696840402767}
   - component: {fileID: -2107875233672074882}
-  - component: {fileID: 109620414292207083}
+  - component: {fileID: 1197357700862262943}
+  - component: {fileID: 1059833223551460164}
+  - component: {fileID: 6446756877930970902}
   m_Layer: 0
   m_Name: FuelNuzzle
   m_TagString: Untagged
@@ -780,7 +782,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &109620414292207083
+--- !u!114 &1197357700862262943
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -789,11 +791,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 6746434091759598500}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed442b80a3352fd4fb8184a603a67209, type: 3}
+  m_Script: {fileID: 11500000, guid: 8523428dbb9848e4d8955390c636b962, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::Nozzle
   restPoint: {fileID: 0}
   rb: {fileID: -2107875233672074882}
+--- !u!114 &1059833223551460164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6746434091759598500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4927dead26403ec4b85cb510ae39075d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PC_NozzleInteractable
+  nozzle: {fileID: 1197357700862262943}
+  handTransform: {fileID: 0}
+--- !u!114 &6446756877930970902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6746434091759598500}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20fdf386c10babe4597a062d362d7c78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VR_NozzleInteractable
+  nozzle: {fileID: 1197357700862262943}
+  rightHandTransform: {fileID: 0}
 --- !u!1 &7194610662539806965
 GameObject:
   m_ObjectHideFlags: 0
