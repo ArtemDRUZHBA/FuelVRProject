@@ -20,12 +20,14 @@ public class HoseController : MonoBehaviour
     void LateUpdate()
     {
         if (anchorPoint == null || gunPoint == null) return; // защита от null
+
         // Ограничение длины
         float dist = Vector3.Distance(anchorPoint.position, gunPoint.position);
         if (dist > maxLength)
         {
             Vector3 dir = (gunPoint.position - anchorPoint.position).normalized;
-            gunPoint.position = anchorPoint.position + dir * maxLength;
+            Vector3 targetPos = anchorPoint.position + dir * maxLength;
+            gunPoint.position = Vector3.Lerp(gunPoint.position, targetPos, Time.deltaTime * 10f);
         }
 
         // Распределяем кости между anchor и gun
@@ -33,6 +35,10 @@ public class HoseController : MonoBehaviour
         {
             float t = (float)i / (bones.Length - 1);
             Vector3 targetPos = Vector3.Lerp(anchorPoint.position, gunPoint.position, t);
+
+            float sag = Mathf.Sin(t * Mathf.PI) * 0.2f;
+            Vector3 sagOffset = Vector3.down * sag; 
+
             bones[i].position = Vector3.Lerp(bones[i].position, targetPos, Time.deltaTime * smooth);
         }
     }
