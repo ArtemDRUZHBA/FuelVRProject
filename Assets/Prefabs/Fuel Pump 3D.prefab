@@ -683,6 +683,7 @@ GameObject:
   - component: {fileID: 7606326717747655874}
   - component: {fileID: 7927919349423412011}
   - component: {fileID: 7927919349423412010}
+  - component: {fileID: -4941134799680937890}
   m_Layer: 0
   m_Name: Fuel Pump 3D
   m_TagString: Untagged
@@ -755,6 +756,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 14, y: 16.515419, z: 6.7748013}
   m_Center: {x: -0.7827306, y: 7.7577095, z: -0.2783003}
+--- !u!114 &-4941134799680937890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7117034815808417400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8862e32a5785b94fb09a1a2a9ca77e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hosePrefab: {fileID: 3332032883668065649, guid: 8b75a1b2c470c2448bf186237584e5c7, type: 3}
+  hoseCount: 8
 --- !u!1 &7366386483995719211
 GameObject:
   m_ObjectHideFlags: 0

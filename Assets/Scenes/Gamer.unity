@@ -928,7 +928,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.83142155, y: 0.011157339}
   m_AnchorMax: {x: 0.855, y: 0.056527987}
-  m_AnchoredPosition: {x: 96.900024, y: -16.800018}
+  m_AnchoredPosition: {x: 96.900024, y: -16.800049}
   m_SizeDelta: {x: 180, y: 31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &112387247
@@ -2473,7 +2473,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 860885504}
-  - {fileID: 2031435413}
   m_Father: {fileID: 95551073}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &359562056
@@ -13221,53 +13220,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7171361687537752325, guid: a8dac81cf9705df4f81e60bde5399b2d, type: 3}
   m_PrefabInstance: {fileID: 2030426425}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2031435412
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2031435413}
-  - component: {fileID: 2031435414}
-  m_Layer: 0
-  m_Name: NozzleHoseSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2031435413
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2031435412}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 344751605}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2031435414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2031435412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8862e32a5785b94fb09a1a2a9ca77e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hosePrefab: {fileID: 3332032883668065649, guid: 8b75a1b2c470c2448bf186237584e5c7, type: 3}
-  nozzlePrefab: {fileID: 6746434091759598500, guid: 25abfc306f180df4e8e6ec633d57eb62, type: 3}
-  hoseCount: 8
 --- !u!1 &2039443603
 GameObject:
   m_ObjectHideFlags: 0
