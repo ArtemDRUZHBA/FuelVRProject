@@ -4,17 +4,8 @@ using UnityEngine.UI;
 
 public class LoadSceneManager : MonoBehaviour
 {
-    [SerializeField] private Button continueButton;
-    [SerializeField] private string sceneName = "GameScene";
-
-    void Start()
+    public void LoadGameScene()
     {
-        continueButton.onClick.RemoveAllListeners();
-        continueButton.onClick.AddListener(LoadGameScene);
-    }
-
-    private void LoadGameScene()
-    {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(1);
     }
 }
