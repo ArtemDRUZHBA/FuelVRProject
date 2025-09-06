@@ -1,6 +1,5 @@
 using UnityEngine;
-
-[RequireComponent(typeof(MeshCollider), typeof(Rigidbody))]
+ 
 public class Nozzle : MonoBehaviour, INozzle
 {
     [SerializeField] public Transform restPoint;
@@ -19,7 +18,7 @@ public class Nozzle : MonoBehaviour, INozzle
         if (restPoint == null)
         {
             string number = name.Replace("FuelNuzzle", "");
-            Transform pumpRoot = transform.parent; 
+            Transform pumpRoot = transform.parent;
             while (pumpRoot != null && !pumpRoot.name.StartsWith("FuelPump"))
             {
                 pumpRoot = pumpRoot.parent;
@@ -48,7 +47,9 @@ public class Nozzle : MonoBehaviour, INozzle
         transform.localRotation = Quaternion.identity;
 
         rb.isKinematic = true;
-        GetComponent<Collider>().enabled = false;
+
+        Collider col = GetComponent<Collider>();
+        if (col != null) col.enabled = false;
     }
 
     public void ReturnToRest()
@@ -65,6 +66,8 @@ public class Nozzle : MonoBehaviour, INozzle
         transform.localRotation = Quaternion.identity;
 
         rb.isKinematic = true;
-        GetComponent<Collider>().enabled = true;
+
+        Collider col = GetComponent<Collider>();
+        if (col != null) col.enabled = true;
     }
 }

@@ -3127,7 +3127,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.83800006, y: 0.046842664}
   m_AnchorMax: {x: 0.855, y: 0.09057867}
-  m_AnchoredPosition: {x: 93.899994, y: -15.900024}
+  m_AnchoredPosition: {x: 93.899994, y: -15.90004}
   m_SizeDelta: {x: 186, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &471212907
@@ -5813,6 +5813,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 344751605}
     m_Modifications:
+    - target: {fileID: 2052305978756166720, guid: 986c3d0d840c193499421d18558ecada, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7117034815808417400, guid: 986c3d0d840c193499421d18558ecada, type: 3}
       propertyPath: m_Name
       value: Fuel Pump 3D
@@ -7096,7 +7100,6 @@ GameObject:
   - component: {fileID: 1030801618}
   - component: {fileID: 1030801621}
   - component: {fileID: 1030801627}
-  - component: {fileID: 1030801626}
   - component: {fileID: 1030801625}
   m_Layer: 0
   m_Name: Player
@@ -7246,7 +7249,6 @@ Transform:
   m_Children:
   - {fileID: 2000661227}
   - {fileID: 1662596669}
-  - {fileID: 1528703632}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1030801625
@@ -7264,20 +7266,7 @@ MonoBehaviour:
   interactionRange: 5
   interactableMask:
     serializedVersion: 2
-    m_Bits: 0
---- !u!114 &1030801626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1030801617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dfa591e4d3fc7747912f6a4c8573e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RayFromController
-  controllerTransform: {fileID: 0}
+    m_Bits: 8
 --- !u!114 &1030801627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10209,37 +10198,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3419777244329918645, guid: ab57debc8f8f6be4ea562be3cd13adcb, type: 3}
   m_PrefabInstance: {fileID: 1523905537}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1528703631
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1528703632}
-  m_Layer: 0
-  m_Name: HandRight
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1528703632
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1528703631}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.6, y: 0, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1030801624}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1570214052
 GameObject:
   m_ObjectHideFlags: 0
@@ -13777,7 +13735,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.9110001}
   m_AnchorMax: {x: 0.165, y: 0.99154454}
-  m_AnchoredPosition: {x: -49.00006, y: 11.700012}
+  m_AnchoredPosition: {x: -49.00006, y: 11.700027}
   m_SizeDelta: {x: -132, y: -24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2103636270
