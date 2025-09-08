@@ -4799,6 +4799,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3676406325397803805, guid: 7a0654902eb5eb04b8e2d73483631d8c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7053412956920124152, guid: 7a0654902eb5eb04b8e2d73483631d8c, type: 3}
       propertyPath: m_Name
       value: Player VR
