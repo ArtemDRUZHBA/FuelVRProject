@@ -8,21 +8,20 @@ public class CarMovement : MonoBehaviour
     private List<Transform> currentPath;
     private int currentWaypointIndex = 0;
 
-    public float speed = 25f; // Не используется напрямую, но можно применять для масштабирования силы
-    public float turnSpeed = 2f;         // Скорость поворота
-    public float accelerationForce = 25f; // Сила ускорения
-    public float closeEnoughDistance = 3.5f; // Расстояние, при котором считаем, что достигли точки
+    public float speed = 25f;
+    public float turnSpeed = 2f;    
+    public float accelerationForce = 25f;
+    public float closeEnoughDistance = 3.5f; 
 
     private Rigidbody rb;
-    private Vector3 targetDelta; // Направление к следующей точке
-    public FuelSpotController currentFuelStation; // Ссылка на колонку, которая заправляет эту машину
+    private Vector3 targetDelta;
+    public FuelSpotController currentFuelStation;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
         if (rb == null)
         {
-            Debug.LogError("Rigidbody не найден на " + gameObject.name);
         }
     }
 
@@ -31,7 +30,6 @@ public class CarMovement : MonoBehaviour
     {
         if (path == null)
         {
-            Debug.LogError($"Ошибка: получен NULL путь для машины {gameObject.name}");
             return;
         }
         List<Transform> newPath = new List<Transform>();
@@ -40,7 +38,6 @@ public class CarMovement : MonoBehaviour
             newPath.Add(child);
         }
         pathQueue.Enqueue(newPath);
-        Debug.Log($"Машина {gameObject.name} добавила путь `{path.name}`, {newPath.Count} точек.");
     }
 
     // Запускаем движение, если в очереди есть пути
@@ -61,17 +58,13 @@ public class CarMovement : MonoBehaviour
 
             while (currentWaypointIndex < currentPath.Count)
             {
-                Transform targetWaypoint = currentPath[currentWaypointIndex];
+                Transform targetWaypoint = currentPath[currentWaypointIndex]; 
                 while (Vector3.Distance(transform.position, targetWaypoint.position) > 3f)
                 {
                     Rotate(targetWaypoint);
                     float angle = Vector3.Angle(transform.forward, (targetWaypoint.position - transform.position).normalized);
                     if (angle <= 90f)
                         transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, speed * Time.deltaTime);
-                    else
-                    {
-                        Debug.LogError("AAA");
-                    }
                         yield return null;
                 }
                 currentWaypointIndex++;
