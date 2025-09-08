@@ -5,15 +5,19 @@ using UnityEngine.UI;
 public class SliderController : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _countText;
+    [SerializeField] private ConfirmButtonController _confirmCont;
     private Slider _slider;
 
     private void Start()
     {
         _slider = GetComponent<Slider>();
+        SendToConfirmController();
     }
 
-    private void Update()
+    public void SendToConfirmController()
     {
-        _countText.text = _slider.value + "";
+        int sliderValue = (int)_slider.value;
+        _confirmCont.SetFuelCount(sliderValue);
+        _countText.text = sliderValue + "";
     }
 }

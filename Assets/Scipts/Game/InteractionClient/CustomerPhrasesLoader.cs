@@ -12,11 +12,6 @@ public class CustomerPhrasesLoader : MonoBehaviour
         {
             // Разбиваем на массив строк, удаляя пустые строки
             phrases = textAsset.text.Split(new char[] { '\n' }, System.StringSplitOptions.RemoveEmptyEntries);
-            Debug.Log("Загружено фраз: " + phrases.Length);
-        }
-        else
-        {
-            Debug.LogError("Файл customer_phrases.txt не найден в папке Resources!");
         }
     }
 

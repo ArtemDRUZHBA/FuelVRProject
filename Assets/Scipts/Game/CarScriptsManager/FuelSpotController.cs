@@ -27,7 +27,6 @@ public class FuelSpotController : MonoBehaviour, IInteractable
     public void ReserveSpot()
     {
         reserved = true;
-        Debug.Log($"Колонка {gameObject.name} зарезервирована.");
     }
 
     public void ReleaseReservation()
@@ -53,7 +52,6 @@ public class FuelSpotController : MonoBehaviour, IInteractable
         CarMovement carMovement = other.GetComponent<CarMovement>();
         if (carMovement != null)
         {
-            Debug.Log($"Колонка {gameObject.name}: обнаружена машина {other.gameObject.name} для заправки.");
             OccupySpot(other.transform);
         }
     }
@@ -72,7 +70,6 @@ public class FuelSpotController : MonoBehaviour, IInteractable
     {
         if (occupied)
         {
-            Debug.LogWarning($"Колонка {gameObject.name} уже занята!");
             return;
         }
         occupied = true;
@@ -86,7 +83,6 @@ public class FuelSpotController : MonoBehaviour, IInteractable
             carMovement.currentFuelStation = this;
         }
 
-        Debug.Log($"Машина {car.gameObject.name} начала заправку на колонке {gameObject.name}. Ожидание взаимодействия с игроком...");
         StartCoroutine(FuelRoutine(car));
     }
 
@@ -98,11 +94,9 @@ public class FuelSpotController : MonoBehaviour, IInteractable
         isFuelingStarted = true;
 
         fuelingActivated = true;
-        Debug.Log("Взаимодействие получено: заправка активирована.");
 
         CustomerPhrasesLoader phraseLoader = FindObjectOfType<CustomerPhrasesLoader>();
         string phrase = (phraseLoader != null) ? phraseLoader.GetRandomPhrase() : "Фраз нет!";
-        Debug.Log("Фраза: " + phrase);
 
         FuelUIManager uiManager = FindObjectOfType<FuelUIManager>();
         if (uiManager != null)
@@ -113,7 +107,6 @@ public class FuelSpotController : MonoBehaviour, IInteractable
 
     private IEnumerator FuelRoutine(Transform car)
     {
-        Debug.Log("[FuelRoutine] запущен для " + car.name);
 
         // 2) Создаём и прямо вешаем как дочерний к car
         Vector3 offset = new Vector3(0, 2f, 0);
@@ -121,13 +114,11 @@ public class FuelSpotController : MonoBehaviour, IInteractable
         barGO.transform.localPosition = offset;
         barGO.transform.localRotation = Quaternion.identity;
         barGO.transform.localScale = Vector3.one;
-        Debug.Log("[FuelRoutine] Instantiate вернул: " + barGO.name);
 
         // 3) Настраиваем контроллер
         var barCtrl = barGO.GetComponent<FuelBarController>();
         if (barCtrl == null)
         {
-            Debug.LogError("[FuelRoutine] НЕ нашёл FuelBarController на prefab!");
             yield break;
         }
         barCtrl.target = car;
@@ -143,7 +134,6 @@ public class FuelSpotController : MonoBehaviour, IInteractable
             barCtrl.SetProgress(p);
             yield return null;
         }
-        Debug.Log("[FuelRoutine] заполнение завершено");
 
         // 6) Убираем bar
         Destroy(barGO);
