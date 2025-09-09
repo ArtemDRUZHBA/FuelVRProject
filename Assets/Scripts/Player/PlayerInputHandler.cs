@@ -35,13 +35,13 @@ public class PlayerInputHandler : MonoBehaviour
             }
 
             // иначе, если это машина — пробуем достучаться до FuelSpot
-            if (hit.collider.TryGetComponent<CarMovement>(out var carMov)
+           /* if (hit.collider.TryGetComponent<CarMovement>(out var carMov)
                 && carMov.currentFuelStation != null)
             {
                 Debug.Log("[Player] Activating UI via FuelSpot");
                 carMov.currentFuelStation.Interact();
                 return;
-            }
+            }*/
         }
         else
         {

@@ -5,16 +5,15 @@ public class CarObjectPool : MonoBehaviour
 {
     public GameObject[] carPrefabs;
     public int poolSize = 10;
+    public Transform carParentTransform;
     private List<GameObject> carPool = new List<GameObject>();
 
-    void Start()
+    private GameObject CreateCar(Vector3 spawnPosition)
     {
-        for (int i = 0; i < poolSize; i++)
-        {
-            GameObject car = Instantiate(carPrefabs[Random.Range(0, carPrefabs.Length)]);
-            car.SetActive(false);
-            carPool.Add(car);
-        }
+        GameObject newCar = Instantiate(carPrefabs[Random.Range(0, carPrefabs.Length)]);
+        newCar.transform.parent = carParentTransform;
+        newCar.SetActive(false);
+        return newCar;
     }
 
     public GameObject GetCar(Vector3 spawnPosition)
@@ -23,14 +22,18 @@ public class CarObjectPool : MonoBehaviour
         {
             if (!car.activeInHierarchy)
             {
-                car.transform.position = spawnPosition;
                 car.SetActive(true);
                 return car;
             }
         }
 
-        GameObject newCar = Instantiate(carPrefabs[Random.Range(0, carPrefabs.Length)], spawnPosition, Quaternion.identity);
-        carPool.Add(newCar);
-        return newCar;
+        if (carPool.Count < poolSize)
+        {
+            GameObject newCar = CreateCar(spawnPosition);
+            carPool.Add(newCar);
+            return newCar;
+        }
+        
+        return null;
     }
 }
