@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6200553491451343953}
   m_Layer: 0
   m_Name: FuelNozzleAnchor
-  m_TagString: NozzleSocket
+  m_TagString: FuelSocket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,12 +48,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1.2, z: 1}
-  m_Center: {x: 0, y: 1.65, z: 0}
+  m_Size: {x: 0.7, y: 0.7, z: 0.7}
+  m_Center: {x: 0, y: 1.3, z: -0.7}
 --- !u!1001 &7139457508123748524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62,6 +62,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6479343888578737788}
     m_Modifications:
+    - target: {fileID: -4460860092975189198, guid: dc5721f6b709c4e4cb0613a34aa329de, type: 3}
+      propertyPath: socketInsertPoint
+      value: 
+      objectReference: {fileID: 6479343888578737788}
     - target: {fileID: 3299925285643980580, guid: dc5721f6b709c4e4cb0613a34aa329de, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.27237004

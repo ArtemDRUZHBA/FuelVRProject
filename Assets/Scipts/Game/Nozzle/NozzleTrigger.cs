@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class NozzleTrigger : MonoBehaviour
 {
@@ -9,6 +11,9 @@ public class NozzleTrigger : MonoBehaviour
     [Header("Точки вставки")]
     [SerializeField] private Transform socketInsertPoint;
     [SerializeField] private Transform tankInsertPoint;
+
+    [SerializeField] private XRInteractionManager interactionManager;
+    [SerializeField] private XRGrabInteractable grabInteractable;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,14 +32,14 @@ public class NozzleTrigger : MonoBehaviour
 
     private void SnapTo(Transform target)
     {
+        var interactor = grabInteractable.firstInteractorSelecting;
+        if (interactor != null)
+        {
+            interactionManager.SelectExit(interactor, grabInteractable);
+        }
+
         transform.SetParent(target);
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
-
-        var rb = GetComponent<Rigidbody>();
-        if (rb != null) rb.isKinematic = true;
-
-        //var col = GetComponent<Collider>();
-        //if (col != null) col.enabled = false;
     }
 }
