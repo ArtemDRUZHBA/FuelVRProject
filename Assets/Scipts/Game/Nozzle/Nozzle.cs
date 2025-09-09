@@ -1,9 +1,13 @@
 using UnityEngine;
- 
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
+
 public class Nozzle : MonoBehaviour, INozzle
 {
     [SerializeField] public Transform restPoint;
     [SerializeField] private Rigidbody rb;
+
 
     private bool isHeld = false;
     private Transform holder;
@@ -31,6 +35,7 @@ public class Nozzle : MonoBehaviour, INozzle
             }
         }
     }
+    
 
     public void Interact()
     {
