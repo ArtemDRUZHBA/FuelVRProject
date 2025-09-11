@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8665658131169223287}
   - component: {fileID: 6570314012354192835}
   - component: {fileID: 7916197938119653699}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 7511971338939812987}
   - component: {fileID: 3741712394480109015}
   - component: {fileID: 4255906635086137348}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 532096806066443703}
   - component: {fileID: 7723745812850693092}
   - component: {fileID: 1337432453197784113}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 1052468247099761718}
   - component: {fileID: 4683985756724768242}
   - component: {fileID: 5489485169011961802}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cylinder.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 4420516559454090946}
   - component: {fileID: -4460860092975189198}
   - component: {fileID: -8752635623628218654}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: FuelNozzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ Transform:
   m_GameObject: {fileID: 3480379238522103273}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.1982, y: 0.05, z: 14.87748}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -427,7 +427,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -595,7 +595,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -635,7 +635,7 @@ GameObject:
   - component: {fileID: 6038792365776745008}
   - component: {fileID: 3017640959793291881}
   - component: {fileID: 6883100112394744295}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cylinder.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -724,7 +724,7 @@ GameObject:
   - component: {fileID: 2930541946247209153}
   - component: {fileID: 726321036821091525}
   - component: {fileID: 8342765552644220864}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: NurbsPath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,7 +811,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8267365040719297091}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: HoseEndPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -844,7 +844,7 @@ GameObject:
   - component: {fileID: 7736370769213967035}
   - component: {fileID: 112413944870917189}
   - component: {fileID: 2336164044534402422}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cylinder.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -933,7 +933,7 @@ GameObject:
   - component: {fileID: 8158065459879058130}
   - component: {fileID: 828022929411521814}
   - component: {fileID: 6207524663471911382}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1022,7 +1022,7 @@ GameObject:
   - component: {fileID: 3353143145408804241}
   - component: {fileID: 3087506842866858684}
   - component: {fileID: 7693710177127837776}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1109,7 +1109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1072448563126810036}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: HoseExitPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1142,7 +1142,7 @@ GameObject:
   - component: {fileID: 5940211408616418997}
   - component: {fileID: 2516058271930833537}
   - component: {fileID: 4624044980544573087}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cylinder.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}

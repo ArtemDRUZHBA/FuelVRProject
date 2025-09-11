@@ -1052,6 +1052,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: FuelNozzleAnchor5
       objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200553491451343953, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Center.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200553491451343953, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Center.z
+      value: -0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 6479343888578737788, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1184,6 +1204,18 @@ PrefabInstance:
     - target: {fileID: 454747536052738750, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
       propertyPath: m_Name
       value: FuelNozzleAnchor8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6479343888578737788, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1318,6 +1350,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: FuelNozzleAnchor3
       objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6479343888578737788, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1383,6 +1427,18 @@ PrefabInstance:
     - target: {fileID: 454747536052738750, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
       propertyPath: m_Name
       value: FuelNozzleAnchor1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6479343888578737788, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1517,6 +1573,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: FuelNozzleAnchor7
       objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6479343888578737788, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1650,6 +1718,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: FuelNozzleAnchor4
       objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6479343888578737788, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1715,6 +1795,18 @@ PrefabInstance:
     - target: {fileID: 454747536052738750, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
       propertyPath: m_Name
       value: FuelNozzleAnchor6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6479343888578737788, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1848,6 +1940,18 @@ PrefabInstance:
     - target: {fileID: 454747536052738750, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
       propertyPath: m_Name
       value: FuelNozzleAnchor2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683474932350429064, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6479343888578737788, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
       propertyPath: m_LocalPosition.x
