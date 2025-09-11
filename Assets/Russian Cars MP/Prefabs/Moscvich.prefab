@@ -103,7 +103,6 @@ GameObject:
   - component: {fileID: 4132932089316025849}
   - component: {fileID: 910724899300359360}
   - component: {fileID: -4757996932281562283}
-  - component: {fileID: 2679981762323510474}
   - component: {fileID: -626508494346248048}
   m_Layer: 0
   m_Name: Moscvich
@@ -144,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b746374a7f1cb8e4c96d2b831ce0a72f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 10
   turnSpeed: 2
   closeEnoughDistance: 0.5
 --- !u!54 &-4757996932281562283
@@ -174,29 +173,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 80
   m_CollisionDetection: 1
---- !u!136 &2679981762323510474
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3607611424732282691}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 6
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.45, z: 0}
 --- !u!114 &-626508494346248048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,9 +196,10 @@ GameObject:
   - component: {fileID: 505671351304734760}
   - component: {fileID: 7939127915415678448}
   - component: {fileID: 2124964341432464692}
+  - component: {fileID: 8417778511283335655}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -309,6 +286,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8417778511283335655
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3891195364619363962}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2959467708922500008, guid: 3f070cc44a9836d47a00434e707bf44f, type: 3}
 --- !u!1 &4443372945032557030
 GameObject:
   m_ObjectHideFlags: 0

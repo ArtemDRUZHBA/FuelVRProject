@@ -1092,11 +1092,82 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_MovementType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2371876177353122307}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2371876177353122307}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartFueling
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StopFueling
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NozzleTrigger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NozzleTrigger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+--- !u!114 &2371876177353122307 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2378927167976856478, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+  m_PrefabInstance: {fileID: 137708843639601565}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76152f094baa9f41996e0ac9c36e8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NozzleTrigger
 --- !u!4 &6341769242920357857 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6479343888578737788, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
@@ -1154,11 +1225,82 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_MovementType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3098583037240398542}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3098583037240398542}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartFueling
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StopFueling
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NozzleTrigger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NozzleTrigger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+--- !u!114 &3098583037240398542 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2378927167976856478, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+  m_PrefabInstance: {fileID: 721637507045427536}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76152f094baa9f41996e0ac9c36e8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NozzleTrigger
 --- !u!4 &6046229341596024620 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6479343888578737788, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
@@ -1214,6 +1356,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6479343888578737788, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_MovementType
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1278,11 +1424,82 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_MovementType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1003295680528348570}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1003295680528348570}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartFueling
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StopFueling
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NozzleTrigger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NozzleTrigger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+--- !u!114 &1003295680528348570 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2378927167976856478, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+  m_PrefabInstance: {fileID: 3238028469268524548}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76152f094baa9f41996e0ac9c36e8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NozzleTrigger
 --- !u!4 &8432015364590622840 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6479343888578737788, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
@@ -1340,6 +1557,66 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_MovementType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7193891716748875206}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7193891716748875206}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartFueling
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StopFueling
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NozzleTrigger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NozzleTrigger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1350,6 +1627,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6479343888578737788, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
   m_PrefabInstance: {fileID: 4816164126176333400}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7193891716748875206 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2378927167976856478, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+  m_PrefabInstance: {fileID: 4816164126176333400}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76152f094baa9f41996e0ac9c36e8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NozzleTrigger
 --- !u!1001 &6682159583107037610
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1400,6 +1688,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6479343888578737788, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_MovementType
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1464,6 +1756,66 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_MovementType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4974191395567389528}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4974191395567389528}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartFueling
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StopFueling
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NozzleTrigger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NozzleTrigger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1474,6 +1826,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6479343888578737788, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
   m_PrefabInstance: {fileID: 7206961307177717958}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4974191395567389528 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2378927167976856478, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+  m_PrefabInstance: {fileID: 7206961307177717958}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76152f094baa9f41996e0ac9c36e8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NozzleTrigger
 --- !u!1001 &8415053074687898402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1526,6 +1889,66 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_MovementType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6182285088816752828}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6182285088816752828}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartFueling
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StopFueling
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NozzleTrigger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NozzleTrigger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321751836992730702, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1536,3 +1959,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6479343888578737788, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
   m_PrefabInstance: {fileID: 8415053074687898402}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6182285088816752828 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2378927167976856478, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
+  m_PrefabInstance: {fileID: 8415053074687898402}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76152f094baa9f41996e0ac9c36e8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NozzleTrigger

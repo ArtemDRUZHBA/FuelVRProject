@@ -25,6 +25,16 @@ public class NozzleTrigger : MonoBehaviour
         }
     }
 
+    public void StartFueling()
+    {
+
+    }
+
+    public void StopFueling()
+    {
+
+    }
+
     private void SnapTo(Transform target)
     {
         transform.SetParent(target);
