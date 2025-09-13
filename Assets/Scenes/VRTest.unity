@@ -859,7 +859,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.43, y: 1, z: 0.07}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -1155,6 +1155,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &1996939789
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3299925285643980580, guid: dc5721f6b709c4e4cb0613a34aa329de, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.8370044
+      objectReference: {fileID: 0}
+    - target: {fileID: 3299925285643980580, guid: dc5721f6b709c4e4cb0613a34aa329de, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3299925285643980580, guid: dc5721f6b709c4e4cb0613a34aa329de, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.7452414
+      objectReference: {fileID: 0}
+    - target: {fileID: 3299925285643980580, guid: dc5721f6b709c4e4cb0613a34aa329de, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3299925285643980580, guid: dc5721f6b709c4e4cb0613a34aa329de, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3299925285643980580, guid: dc5721f6b709c4e4cb0613a34aa329de, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3299925285643980580, guid: dc5721f6b709c4e4cb0613a34aa329de, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3299925285643980580, guid: dc5721f6b709c4e4cb0613a34aa329de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3299925285643980580, guid: dc5721f6b709c4e4cb0613a34aa329de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3299925285643980580, guid: dc5721f6b709c4e4cb0613a34aa329de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3480379238522103273, guid: dc5721f6b709c4e4cb0613a34aa329de, type: 3}
+      propertyPath: m_Name
+      value: FuelNozzle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dc5721f6b709c4e4cb0613a34aa329de, type: 3}
 --- !u!1 &2126531999
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,3 +1268,4 @@ SceneRoots:
   - {fileID: 1241724328}
   - {fileID: 1344394685}
   - {fileID: 559529496}
+  - {fileID: 1996939789}

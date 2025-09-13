@@ -4,52 +4,65 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class NozzleTrigger : MonoBehaviour
 {
-    [Header("Теги для вставки")]
-    [SerializeField] private string fuelSocketTag = "FuelSocket";
-    [SerializeField] private string fuelTankTag = "FuelTank";
+    public bool inHand;
+    public bool isFueling;
 
-    [Header("Точки вставки")]
-    [SerializeField] private Transform socketInsertPoint;
-    [SerializeField] private Transform tankInsertPoint;
-
-    [SerializeField] private XRInteractionManager interactionManager;
-    [SerializeField] private XRGrabInteractable grabInteractable;
-
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag(fuelSocketTag) && socketInsertPoint != null)
+        if (other.TryGetComponent(out FuelSocket fs) && !inHand)
         {
-            SnapTo(socketInsertPoint);
-            Debug.Log("Пистолет возвращён в гнездо");
+            transform.position = fs.transform.position;
+            transform.rotation = fs.transform.rotation;
         }
+        else if (other.TryGetComponent(out FuelTank ft) && !inHand)
+        {
+            transform.position = ft.transform.position;
+            transform.rotation = ft.transform.rotation; 
+            isFueling = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent(out FuelTank ft))
+        {
+            isFueling = false;
+        }
+    }
 
-        else if (other.CompareTag(fuelTankTag) && tankInsertPoint != null)
-        {
-            SnapTo(tankInsertPoint);
-            Debug.Log("Пистолет вставлен в бак");
-        }
+    private void FixedUpdate()
+    {
+        Fueling();
+    }
+
+    private void Fueling()
+    {
+        if (!isFueling)
+            return;
+        Debug.Log("Fueling Started");
+        // Заправлять
+    }
+
+    public void NozzleTaked()
+    {
+        inHand = true;
+        isFueling = false;
+    }
+
+    public void NozzleThrowned()
+    {
+        inHand = false;
+        isFueling = false;
     }
 
     public void StartFueling()
     {
-
+        if (inHand && !isFueling)
+            isFueling = true;
     }
 
     public void StopFueling()
     {
-
-    }
-
-    private void SnapTo(Transform target)
-    {
-        var interactor = grabInteractable.firstInteractorSelecting;
-        if (interactor != null)
-        {
-            interactionManager.SelectExit(interactor, grabInteractable);
-        }
-
-        transform.SetParent(target);
-        transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.identity;
+        if (inHand && isFueling)
+            isFueling = false;
     }
 }
