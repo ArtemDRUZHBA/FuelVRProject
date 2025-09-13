@@ -824,7 +824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8862e32a5785b94fb09a1a2a9ca77e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hosePrefab: {fileID: 2108942706053500350, guid: 8b75a1b2c470c2448bf186237584e5c7, type: 3}
+  hosePrefab: {fileID: 5491872035903531053, guid: 24a279874f08a5b46a9cb7843b069743, type: 3}
   hoseCount: 8
 --- !u!1 &7366386483995719211
 GameObject:
