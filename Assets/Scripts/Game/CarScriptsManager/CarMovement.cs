@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CarMovement : MonoBehaviour
 {
-    private List<Transform> waypoints = new List<Transform>();
-    private int currentWaypointIndex = 0;
+    public List<Transform> waypoints = new List<Transform>();
+    public int currentWaypointIndex = 0;
 
     public float speed = 25f;
     public float turnSpeed = 2f;
@@ -61,7 +61,7 @@ public class CarMovement : MonoBehaviour
             Rotate(targetWaypoint);
             transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, speed * Time.deltaTime);
 
-            if (transform.position == targetWaypoint.position)
+            if (Vector3.Distance(transform.position, targetWaypoint.position) < 0.05f)
             {
                 currentWaypointIndex++;
             }

@@ -6,26 +6,39 @@ public class NozzleTrigger : MonoBehaviour
 {
     public bool inHand;
     public bool isFueling;
+    public float fuelingSpeed;
+
+    private FuelTank fuelTank;
+    private Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     private void OnTriggerStay(Collider other)
     {
         if (other.TryGetComponent(out FuelSocket fs) && !inHand)
         {
+            rb.isKinematic = true;
             transform.position = fs.transform.position;
             transform.rotation = fs.transform.rotation;
         }
-        else if (other.TryGetComponent(out FuelTank ft) && !inHand)
-        {
-            transform.position = ft.transform.position;
-            transform.rotation = ft.transform.rotation; 
-            isFueling = true;
-        }
     }
-    private void OnTriggerExit(Collider other)
+
+    public void SetFuelTank(FuelTank ft)
     {
-        if (other.TryGetComponent(out FuelTank ft))
+        fuelTank = ft;
+        if (fuelTank == null)
         {
             isFueling = false;
+        }
+        else if (fuelTank != null && !inHand)
+        {
+            rb.isKinematic = true;
+            transform.position = ft.transform.position;
+            transform.rotation = ft.transform.rotation;
+            isFueling = true;
         }
     }
 
@@ -36,10 +49,10 @@ public class NozzleTrigger : MonoBehaviour
 
     private void Fueling()
     {
-        if (!isFueling)
-            return;
-        Debug.Log("Fueling Started");
-        // Заправлять
+        if (fuelTank != null)
+            Debug.Log(isFueling + " " + fuelTank.name);
+        if (isFueling && fuelTank != null)
+            fuelTank.Fueling(fuelingSpeed);
     }
 
     public void NozzleTaked()
@@ -52,6 +65,7 @@ public class NozzleTrigger : MonoBehaviour
     {
         inHand = false;
         isFueling = false;
+        rb.isKinematic = false;
     }
 
     public void StartFueling()

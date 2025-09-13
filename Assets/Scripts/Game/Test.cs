@@ -16,6 +16,15 @@ public class Test : MonoBehaviour
         inHand = false;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Enter");
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        Debug.Log("Exit");
+    }
+
     public void HoverEntered()
     {
         Debug.Log("Hover Entered");
