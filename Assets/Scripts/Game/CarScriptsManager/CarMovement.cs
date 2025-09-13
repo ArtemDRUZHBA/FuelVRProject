@@ -11,6 +11,18 @@ public class CarMovement : MonoBehaviour
     public float turnSpeed = 2f;
     public float closeEnoughDistance = 3.5f;
 
+    public bool canMove;
+    private bool isFueling;
+    private bool stoppedAtGazStation;
+
+    private void OnEnable()
+    {
+        isFueling = false;
+        stoppedAtGazStation = false;
+        currentWaypointIndex = 0;
+
+    }
+
     public void AddPath(Transform[] newWaypoints)
     {
         foreach (Transform newWaypoint in newWaypoints)
@@ -23,29 +35,56 @@ public class CarMovement : MonoBehaviour
     {
         if (waypoints.Count > 0)
         {
-            MoveAlongPath();
+            canMove = true;
+        }
+        else
+        {
+            canMove = false;
         }
     }
 
-    public void MoveAlongPath()
+    private void FixedUpdate()
     {
-        while (currentWaypointIndex < waypoints.Count)
+        MoveAlongPath();
+    }
+
+    private void MoveAlongPath()
+    {
+        if (!canMove)
+            return; 
+        CheakWaypoint();
+
+        if (!isFueling)
         {
             Transform targetWaypoint = waypoints[currentWaypointIndex];
 
             Rotate(targetWaypoint);
-            float angle = Vector3.Angle(transform.forward, (targetWaypoint.position - transform.position).normalized);
-            if (angle <= 90f)
-                transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, speed * Time.deltaTime);
 
             if (transform.position == targetWaypoint.position)
             {
                 currentWaypointIndex++;
-                Debug.Log(currentWaypointIndex + " " + transform.name);
             }
         }
+    }
 
-        currentWaypointIndex = 0;
+    public void StopFueling()
+    {
+        canMove = true;
+        isFueling = false;
+    }
+
+    private void CheakWaypoint()
+    {
+        if (currentWaypointIndex == 0)
+            return;
+
+        if (waypoints[currentWaypointIndex - 1].TryGetComponent(out FuelSpotController fsc) && !stoppedAtGazStation)
+        {
+            canMove = false;
+            isFueling = true;
+            stoppedAtGazStation = true;
+        }
     }
 
     private void Rotate(Transform target)

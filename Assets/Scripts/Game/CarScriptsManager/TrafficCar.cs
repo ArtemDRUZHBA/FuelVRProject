@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TrafficCar : MonoBehaviour
@@ -14,9 +15,11 @@ public class TrafficCar : MonoBehaviour
     [SerializeField] private Transform[] path1;
 
     [Header("Path2")]
-    [SerializeField] private Transform[] startPath;
+    [SerializeField] private Transform[] path2;
+    [Header("Path3")]
+    [SerializeField] private Transform[] path3;
+    [Header("FuelSpots")]
     [SerializeField] private Transform[] fuelSpots;
-    [SerializeField] private Transform[] finalPath;
 
     [Header("Preferences")]
     [SerializeField] private float minSpawnTime = 2f;
@@ -26,66 +29,63 @@ public class TrafficCar : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < spawnPoints.Count(); i++)
-        {
-            StartCoroutine(SpawnCar(spawnPoints[i], i));
-        }
+        StartCoroutine("SpawnCar");
     }
 
-    IEnumerator SpawnCar(Transform spawnPoint, int waypointIndex)
+    IEnumerator SpawnCar()
     {
-        while (canSpawn)
-        {
-            yield return new WaitForSeconds(Random.Range(minSpawnTime, maxSpawnTime));
+        int spawnPointIndex = Random.Range(0, spawnPoints.Length);
+        Transform spawnPoint = spawnPoints[spawnPointIndex];
 
-            if (waypointIndex == 0)
+        yield return new WaitForSeconds(Random.Range(minSpawnTime, maxSpawnTime));
+
+        if (spawnPointIndex == 0)
+        {
+            GameObject car = carPool.GetCar(spawnPoint.position);
+            if (car != null)
+            {
+                CarMovement carMovement = car.GetComponent<CarMovement>();
+                carMovement.AddPath(path1); 
+                carMovement.StartMovement();
+            }
+        }
+        else
+        {
+            int freeSpotIndex = TryGetFreeFuelSpot();
+            if (freeSpotIndex != fuelSpots.Length)
             {
                 GameObject car = carPool.GetCar(spawnPoint.position);
                 if (car != null)
                 {
                     CarMovement carMovement = car.GetComponent<CarMovement>();
-                    carMovement.AddPath(path1);
-                    carMovement.StartMovement();
-                }
-            }
-            else
-            {
-                Transform freeSpot = TryGetFreeFuelSpot();
-                GameObject car = carPool.GetCar(spawnPoint.position);
+                    fuelSpots[freeSpotIndex].GetComponent<FuelSpotController>().OccupyFuelSpot();
 
-                if (freeSpot != null && car != null)
-                {
-                    CarMovement carMovement = car.GetComponent<CarMovement>();
-
-                    Transform[] path = new Transform[startPath.Length + 1 + finalPath.Length]; 
-
-                    for (int i = 0; i < path.Length; i++)
+                    if (freeSpotIndex == 0)
                     {
-                        if (i < startPath.Length)
-                            path[i] = startPath[i];
-                        if (i == startPath.Length)
-                            path[i] = freeSpot;
-                        else
-                            path[i] = finalPath[0];
+                        carMovement.AddPath(path2);
                     }
-
-                    carMovement.AddPath(path);
+                    else
+                    {
+                        carMovement.AddPath(path3);
+                    }
+                    
                     carMovement.StartMovement();
                 }
             }
         }
+        StartCoroutine("SpawnCar");
     }
 
-    public Transform TryGetFreeFuelSpot()
+    public int TryGetFreeFuelSpot()
     {
-        foreach (Transform spot in fuelSpots)
+        for (int i = 0; i < fuelSpots.Length; i++)
         {
-            FuelSpotController fsc = spot.GetComponent<FuelSpotController>();
+            FuelSpotController fsc = fuelSpots[i].GetComponent<FuelSpotController>();
             if (fsc.TryOccupySpot())
             {
-                return spot;
+                return i;
             }
         }
-        return null;
+        return fuelSpots.Length;
     }
 }

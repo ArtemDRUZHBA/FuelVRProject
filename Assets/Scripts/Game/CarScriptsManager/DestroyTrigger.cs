@@ -6,7 +6,7 @@ public class DestroyTrigger : MonoBehaviour
     {
         if (other.CompareTag("Car"))
         {
-            other.gameObject.SetActive(false);
+            other.transform.parent.gameObject.SetActive(false);
         }
     }
 }

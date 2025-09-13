@@ -12,11 +12,14 @@ public class FuelSpotController : MonoBehaviour
             return false;
         }
         
-        isOccupied = true;
         return true;
     }
+    public void OccupyFuelSpot()
+    {
+        isOccupied = true;
+    }
 
-    public void UnOccupySpot()
+    private void OnTriggerExit(Collider other)
     {
         isOccupied = false;
     }
