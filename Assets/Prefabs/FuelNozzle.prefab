@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8665658131169223287}
   - component: {fileID: 6570314012354192835}
   - component: {fileID: 7916197938119653699}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 7511971338939812987}
   - component: {fileID: 3741712394480109015}
   - component: {fileID: 4255906635086137348}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 532096806066443703}
   - component: {fileID: 7723745812850693092}
   - component: {fileID: 1337432453197784113}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,6 +267,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1299679280005507923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5440635261799865625}
+  m_Layer: 0
+  m_Name: AttachPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5440635261799865625
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299679280005507923}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: -0.038, y: 1.539, z: 0.974}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3299925285643980580}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3454651131233627099
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +309,7 @@ GameObject:
   - component: {fileID: 1052468247099761718}
   - component: {fileID: 4683985756724768242}
   - component: {fileID: 5489485169011961802}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cylinder.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +402,7 @@ GameObject:
   - component: {fileID: 4420516559454090946}
   - component: {fileID: -4460860092975189198}
   - component: {fileID: -8752635623628218654}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: FuelNozzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +418,7 @@ Transform:
   m_GameObject: {fileID: 3480379238522103273}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.1982, y: 0.05, z: 14.87748}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -403,6 +434,7 @@ Transform:
   - {fileID: 2930541946247209153}
   - {fileID: 8267365040719297091}
   - {fileID: 1072448563126810036}
+  - {fileID: 5440635261799865625}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2914242035717478197
@@ -427,7 +459,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -493,10 +525,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76152f094baa9f41996e0ac9c36e8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NozzleTrigger
-  fuelSocketTag: FuelSocket
-  fuelTankTag: FuelTank
-  socketInsertPoint: {fileID: 6479343888578737788, guid: a8b2a910e5f6beb4d8d95be4d1ddbf6f, type: 3}
-  tankInsertPoint: {fileID: 0}
+  inHand: 0
+  isFueling: 0
 --- !u!114 &-8752635623628218654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,10 +574,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -562,14 +616,38 @@ MonoBehaviour:
       m_Calls: []
   m_Activated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Deactivated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 5440635261799865625}
   m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
@@ -595,7 +673,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -635,7 +713,7 @@ GameObject:
   - component: {fileID: 6038792365776745008}
   - component: {fileID: 3017640959793291881}
   - component: {fileID: 6883100112394744295}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cylinder.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -724,7 +802,7 @@ GameObject:
   - component: {fileID: 2930541946247209153}
   - component: {fileID: 726321036821091525}
   - component: {fileID: 8342765552644220864}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: NurbsPath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,7 +889,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8267365040719297091}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: HoseEndPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -844,7 +922,7 @@ GameObject:
   - component: {fileID: 7736370769213967035}
   - component: {fileID: 112413944870917189}
   - component: {fileID: 2336164044534402422}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cylinder.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -933,7 +1011,7 @@ GameObject:
   - component: {fileID: 8158065459879058130}
   - component: {fileID: 828022929411521814}
   - component: {fileID: 6207524663471911382}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1022,7 +1100,7 @@ GameObject:
   - component: {fileID: 3353143145408804241}
   - component: {fileID: 3087506842866858684}
   - component: {fileID: 7693710177127837776}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1109,7 +1187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1072448563126810036}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: HoseExitPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1142,7 +1220,7 @@ GameObject:
   - component: {fileID: 5940211408616418997}
   - component: {fileID: 2516058271930833537}
   - component: {fileID: 4624044980544573087}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Cylinder.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}

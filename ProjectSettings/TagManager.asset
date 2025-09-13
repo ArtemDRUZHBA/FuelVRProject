@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Car
   - NozzleSocket
+  - FuelSocket
+  - FuelTank
   layers:
   - Default
   - TransparentFX
