@@ -6649,24 +6649,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da419d26e51d34c4a958d959b7dd21b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 755683502}
-  - {fileID: 1950068138}
   carPool: {fileID: 1748764148}
-  lanePaths:
-  - {fileID: 1828963238}
-  - {fileID: 122063650}
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  path1: []
+  startPath: []
   fuelSpots:
   - {fileID: 2116588266}
   - {fileID: 1122863979}
-  fuelSpotEnterPaths:
-  - {fileID: 2083208810}
-  - {fileID: 1007843934}
-  fuelSpotExitPaths:
-  - {fileID: 1342842681}
-  - {fileID: 1367395624}
-  finalPaths:
-  - {fileID: 731264492}
+  finalPath: []
+  minSpawnTime: 2
+  maxSpawnTime: 5
+  spawnChance: 1
+  canSpawn: 1
 --- !u!1001 &980557532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7981,8 +7977,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddd53716363fc814c8d9d84ec0fb2108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentFuelStation: {fileID: 0}
-  fuelBarPrefab: {fileID: 5581643981355944422, guid: 0b39bdd301425354991b3d33f827ce2a, type: 3}
 --- !u!65 &1122863982
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10485,6 +10479,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8020848465048613795, guid: 656d700de84bb884f91f690b6ec824c8, type: 3}
   m_PrefabInstance: {fileID: 1614092085}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1618054564
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: e2a0e4ddf3359fe45b2dab7e0d1b4997, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 31.652184
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e2a0e4ddf3359fe45b2dab7e0d1b4997, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.049999237
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e2a0e4ddf3359fe45b2dab7e0d1b4997, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.531349
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e2a0e4ddf3359fe45b2dab7e0d1b4997, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e2a0e4ddf3359fe45b2dab7e0d1b4997, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e2a0e4ddf3359fe45b2dab7e0d1b4997, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e2a0e4ddf3359fe45b2dab7e0d1b4997, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e2a0e4ddf3359fe45b2dab7e0d1b4997, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e2a0e4ddf3359fe45b2dab7e0d1b4997, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e2a0e4ddf3359fe45b2dab7e0d1b4997, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e2a0e4ddf3359fe45b2dab7e0d1b4997, type: 3}
+      propertyPath: m_Name
+      value: Chaika
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e2a0e4ddf3359fe45b2dab7e0d1b4997, type: 3}
 --- !u!1 &1645151906
 GameObject:
   m_ObjectHideFlags: 0
@@ -10979,15 +11030,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carPrefabs:
-  - {fileID: 14056680046507707, guid: 5b911b5d0a33ab342b452f167f5e2abc, type: 3}
-  - {fileID: 3607611424732282691, guid: 2daf7256715266c4a9a22ce5c0f17077, type: 3}
-  - {fileID: 6863432921201879567, guid: 59d2065724ed2bf479a578960568cfbb, type: 3}
-  - {fileID: 4415871053514501766, guid: 383826f60922b5a4bb0a82738a55979e, type: 3}
-  - {fileID: 4463339943136680182, guid: 30f94455876733145b597b7823004218, type: 3}
-  - {fileID: 4084610651289098212, guid: 94489f0d237e9bd48881e69a0f2cdbdc, type: 3}
-  - {fileID: 2439871758175852752, guid: 57800445519d4a84bb1ac04164fec990, type: 3}
-  - {fileID: 2854524497318362123, guid: b2806d3667efd5d4c82529f65aa499da, type: 3}
+  - {fileID: 8362017019976613910, guid: 7e6a25656b737bc4e913aec1ffb6fa04, type: 3}
   poolSize: 10
+  carParentTransform: {fileID: 0}
 --- !u!1001 &1761915194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14296,8 +14341,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddd53716363fc814c8d9d84ec0fb2108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentFuelStation: {fileID: 0}
-  fuelBarPrefab: {fileID: 5581643981355944422, guid: 0b39bdd301425354991b3d33f827ce2a, type: 3}
 --- !u!65 &2116588269
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14397,6 +14440,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8608634457000285200, guid: 7b49d341e90ec3348b41ed7c98b78df3, type: 3}
   m_PrefabInstance: {fileID: 2125424970}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5376010201898399282
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 68008720157491735, guid: 7e6a25656b737bc4e913aec1ffb6fa04, type: 3}
+      propertyPath: m_Name
+      value: ChaikaFuelTank
+      objectReference: {fileID: 0}
+    - target: {fileID: 572248777262598609, guid: 7e6a25656b737bc4e913aec1ffb6fa04, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 572248777262598609, guid: 7e6a25656b737bc4e913aec1ffb6fa04, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.14548552
+      objectReference: {fileID: 0}
+    - target: {fileID: 572248777262598609, guid: 7e6a25656b737bc4e913aec1ffb6fa04, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 572248777262598609, guid: 7e6a25656b737bc4e913aec1ffb6fa04, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 572248777262598609, guid: 7e6a25656b737bc4e913aec1ffb6fa04, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572248777262598609, guid: 7e6a25656b737bc4e913aec1ffb6fa04, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572248777262598609, guid: 7e6a25656b737bc4e913aec1ffb6fa04, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572248777262598609, guid: 7e6a25656b737bc4e913aec1ffb6fa04, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572248777262598609, guid: 7e6a25656b737bc4e913aec1ffb6fa04, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572248777262598609, guid: 7e6a25656b737bc4e913aec1ffb6fa04, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7e6a25656b737bc4e913aec1ffb6fa04, type: 3}
 --- !u!1001 &7316221789797464144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14483,3 +14583,5 @@ SceneRoots:
   - {fileID: 7316221789797464144}
   - {fileID: 1761915194}
   - {fileID: 648855551}
+  - {fileID: 1618054564}
+  - {fileID: 5376010201898399282}
