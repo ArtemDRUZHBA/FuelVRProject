@@ -1,17 +1,37 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
+
 public class XRTriggerAnimator : MonoBehaviour
 {
-    public XRController controller; // назначается в инспекторе
-    public Animator animator;
-    public string triggerName = "Open";
+    [Header("Анимация")] 
+    public AnimatorTarget[] targets;
+    private bool isOpen = false;
 
-    void Update()
+    public void ToggleAnimation()
     {
-        if (controller != null && controller.inputDevice.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out bool isPressed) && isPressed)
+        foreach (var target in targets)
         {
-            animator.SetTrigger(triggerName);
+            if (!target.animator || string.IsNullOrEmpty(target.animationStateName)) continue;
+
+            if (!isOpen)
+            {
+                target.animator.Play(target.animationStateName, 0, 0f);
+                target.animator.speed = 1f;
+            }
+            else
+            {
+                target.animator.Play(target.animationStateName, 0, 1f);
+                target.animator.speed = -1f;
+            }
         }
+
+        isOpen = !isOpen;
     }
+}
+[System.Serializable]
+public class AnimatorTarget
+{
+    public Animator animator;
+    public string animationStateName;
 }
