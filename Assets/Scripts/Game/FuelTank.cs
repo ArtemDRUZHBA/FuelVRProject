@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class FuelTank : MonoBehaviour
 {
+    private FuelTankUi ui;
+
     private bool isOpen;
     public float maxFuelInTank;
     private float fuelInTankBeforeRefueling;
@@ -14,12 +16,18 @@ public class FuelTank : MonoBehaviour
     {
         if (!isFull)
             fuelInTank += fuelingSpeed * Time.deltaTime;
+
+        ui.UpdateUi(maxFuelInTank, fuelInTank);
     }
 
     private void Awake()
     {
+        ui = GetComponentInChildren<FuelTankUi>();
+
         fuelInTankBeforeRefueling = Random.Range(3, maxFuelInTank - 10);
         fuelInTank = fuelInTankBeforeRefueling;
+
+        ui.UpdateUi(maxFuelInTank, fuelInTank);
     }
 
     private void Update()
