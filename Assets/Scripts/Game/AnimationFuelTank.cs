@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Animation : MonoBehaviour
+public class AnimationFuelTank : MonoBehaviour
 {
     public bool isOpen;
     public Animator animator;

@@ -12,13 +12,13 @@ public class TestAnim : MonoBehaviour
     public void OnLeftInteract(Transform controllerTransform)
     {
         Physics.Raycast(controllerTransform.position, leftController.forward, out RaycastHit hitInfo, interactDistance);
-        if (hitInfo.transform.gameObject.TryGetComponent(out Animation animation))
+        if (hitInfo.transform.gameObject.TryGetComponent(out AnimationFuelTank animation))
             ToggleAnimation(animation.animator, animation.isOpen);
     }
     public void OnRightInteract(Transform controllerTransform)
     {
         Physics.Raycast(controllerTransform.position, leftController.forward, out RaycastHit hitInfo, interactDistance);
-        if (hitInfo.transform.gameObject.TryGetComponent(out Animation animation))
+        if (hitInfo.transform.gameObject.TryGetComponent(out AnimationFuelTank animation))
             ToggleAnimation(animation.animator, animation.isOpen);
     }
 
