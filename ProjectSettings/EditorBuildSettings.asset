@@ -18,6 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Game Scene.unity
     guid: 94294852cb22f5f47b9b2cf81cc8eea8
   m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 58ad67be6df4d7343b7873a7ae94d206, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 59b9d7cca0b53c44f9be706dbae777f4, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 0ddb6e123aa57c14b98e60c96fdae854, type: 2}
   m_UseUCBPForAssetBundles: 0

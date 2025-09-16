@@ -7,6 +7,8 @@ public class CarMovement : MonoBehaviour
     public List<Transform> waypoints = new List<Transform>();
     public int currentWaypointIndex = 0;
 
+    private Animator animator;
+
     public float speed = 25f;
     public float turnSpeed = 2f;
     public float closeEnoughDistance = 3.5f;
@@ -14,6 +16,11 @@ public class CarMovement : MonoBehaviour
     public bool canMove;
     private bool isFueling;
     private bool stoppedAtGazStation;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void OnEnable()
     {
@@ -56,15 +63,21 @@ public class CarMovement : MonoBehaviour
 
         if (!isFueling)
         {
+            animator.SetBool("canMove", true);
+
             Transform targetWaypoint = waypoints[currentWaypointIndex];
 
             Rotate(targetWaypoint);
             transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, speed * Time.deltaTime);
 
-            if (Vector3.Distance(transform.position, targetWaypoint.position) < 0.05f)
+            if (Vector3.Distance(transform.position, targetWaypoint.position) < .5f)
             {
                 currentWaypointIndex++;
             }
+        }
+        else
+        {
+            animator.SetBool("canMove", false);
         }
     }
 
