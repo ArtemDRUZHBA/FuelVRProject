@@ -2,17 +2,22 @@ using UnityEngine;
 
 public class KeyboardAnimationTest : MonoBehaviour
 {
+    [Header("јнимаци€")]
     public Animator animator;
-    public string animationStateName = "FuelHatch_MainAction";
-    public KeyCode testKey = KeyCode.Space;
+    public string boolParameter = "IsOpen";
+
+    [Header(" лавиша активации")]
+    public KeyCode activationKey = KeyCode.E;
+
+    private bool isOpen = false;
 
     void Update()
     {
-        if (Input.GetKeyDown(testKey))
+        if (Input.GetKeyDown(activationKey))
         {
-            Debug.Log(" лавиша нажата Ч запускаем анимацию");
-            animator.Play(animationStateName, 0, 0f);
-            animator.speed = 1f;
+            isOpen = !isOpen;
+            animator.SetBool(boolParameter, isOpen);
+            Debug.Log(" лавиша нажата. IsOpen = " + isOpen);
         }
     }
 }
