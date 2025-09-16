@@ -9,12 +9,14 @@ public class XRTriggerAnimator : MonoBehaviour
 
     private bool isOpen = false;
 
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     public void ToggleAnimation()
     {
-        if (!animator) return;
-
         isOpen = !isOpen;
         animator.SetBool(boolParameter, isOpen);
-        Debug.Log("IsOpen set to: " + isOpen);
     }
 }

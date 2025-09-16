@@ -182,7 +182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &168047128
 Animator:
   serializedVersion: 7
@@ -499,8 +499,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b1c5b1ed8a9c4540b301259407e2559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestAnim
-  normal: {fileID: 2100000, guid: d8d1c94ca1e3dbf4799561d395cd10b1, type: 2}
-  selected: {fileID: 2100000, guid: 8dde0cdde3badb84fa3f1244d43476b2, type: 2}
+  leftTrigger: {fileID: 0}
+  rightTrigger: {fileID: 0}
+  mouseClick: {fileID: 0}
+  leftController: {fileID: 0}
+  rightController: {fileID: 0}
+  interactDistance: 0
 --- !u!1001 &559529496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1013,8 +1017,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b1c5b1ed8a9c4540b301259407e2559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestAnim
-  normal: {fileID: 0}
-  selected: {fileID: 0}
+  leftTrigger: {fileID: 0}
+  rightTrigger: {fileID: 0}
+  mouseClick: {fileID: 0}
+  leftController: {fileID: 0}
+  rightController: {fileID: 0}
+  interactDistance: 0
 --- !u!1 &1344394681
 GameObject:
   m_ObjectHideFlags: 0
