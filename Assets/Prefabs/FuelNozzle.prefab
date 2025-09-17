@@ -5978,9 +5978,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76152f094baa9f41996e0ac9c36e8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NozzleTrigger
+  particle: {fileID: 6949794388623417761}
   inHand: 0
   isFueling: 0
-  fuelingSpeed: 0
+  fuelingSpeed: 3
 --- !u!114 &6079239484748248194
 MonoBehaviour:
   m_ObjectHideFlags: 0
