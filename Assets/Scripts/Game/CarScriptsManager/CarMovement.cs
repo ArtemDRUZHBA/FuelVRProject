@@ -9,9 +9,9 @@ public class CarMovement : MonoBehaviour
 
     private Animator animator;
 
-    public float speed = 25f;
+    public float speed = 9f;
     public float turnSpeed = 2f;
-    public float closeEnoughDistance = 3.5f;
+    public float closeEnoughDistance = 0.5f;
 
     public bool canMove;
     private bool isFueling;

@@ -4,6 +4,9 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class NozzleTrigger : MonoBehaviour
 {
+    [SerializeField] private GameObject particle;
+    private ParticleSystem particleSystem;
+
     public bool inHand;
     public bool isFueling;
     public float fuelingSpeed;
@@ -14,6 +17,7 @@ public class NozzleTrigger : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        particleSystem = particle.GetComponent<ParticleSystem>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -49,10 +53,25 @@ public class NozzleTrigger : MonoBehaviour
 
     private void Fueling()
     {
-        if (fuelTank != null)
-            Debug.Log(isFueling + " " + fuelTank.name);
         if (isFueling && fuelTank != null)
+        {
             fuelTank.Fueling(fuelingSpeed);
+            particleSystem.Stop();
+        }
+        else if (isFueling && fuelTank == null)
+        {
+            particleSystem.Play();
+        }
+        else if (!isFueling) 
+        {
+            particleSystem.Stop();
+        }
+    }
+
+    private void OnDisable()
+    {
+        isFueling = false;
+        particleSystem.Stop();
     }
 
     public void NozzleTaked()
