@@ -58,12 +58,13 @@ public class CarMovement : MonoBehaviour
     private void MoveAlongPath()
     {
         if (!canMove)
-            return; 
+            return;
         CheakWaypoint();
 
         if (!isFueling)
         {
-            animator.SetBool("canMove", true);
+            if (animator != null)
+                animator.SetBool("canMove", true);
 
             Transform targetWaypoint = waypoints[currentWaypointIndex];
 
