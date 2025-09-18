@@ -1,24 +1,33 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class NozzleTrigger : MonoBehaviour
 {
     [SerializeField] private GameObject particle;
     private ParticleSystem particleSystem;
 
-    public bool inHand;
-    public bool isFueling;
+
     public float fuelingSpeed;
 
     private FuelTank fuelTank;
     private Rigidbody rb;
+    private XRGrabInteractable grab;
+    private IXRSelectInteractor interactor;
+
+    public bool inHand;
+    public bool isFueling;
+    private bool triggerPressedLastFrame;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         particleSystem = particle.GetComponent<ParticleSystem>();
+        grab = GetComponent<XRGrabInteractable>();
     }
+
 
     private void OnTriggerStay(Collider other)
     {
@@ -89,13 +98,13 @@ public class NozzleTrigger : MonoBehaviour
 
     public void StartFueling()
     {
-        if (inHand && !isFueling)
+        if (inHand)
             isFueling = true;
     }
 
     public void StopFueling()
     {
-        if (inHand && isFueling)
+        if (inHand)
             isFueling = false;
     }
 }
