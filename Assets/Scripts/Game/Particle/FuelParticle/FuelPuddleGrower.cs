@@ -9,7 +9,7 @@ public class FuelPuddleGrower : MonoBehaviour
     {
         var scale = transform.localScale;
         scale.x += growthPerHit;
-        scale.z += growthPerHit;
+        scale.y += growthPerHit;
         transform.localScale = scale;
     }
 }
