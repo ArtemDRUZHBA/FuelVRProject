@@ -18,6 +18,7 @@ public class NozzleTrigger : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         particleSystem = particle.GetComponent<ParticleSystem>();
+        particleSystem.Stop();
     }
 
     private void OnTriggerStay(Collider other)
@@ -33,11 +34,7 @@ public class NozzleTrigger : MonoBehaviour
     public void SetFuelTank(FuelTank ft)
     {
         fuelTank = ft;
-        if (fuelTank == null)
-        {
-            isFueling = false;
-        }
-        else if (fuelTank != null && !inHand)
+        if (fuelTank != null && !inHand)
         {
             rb.isKinematic = true;
             transform.position = ft.transform.position;
@@ -62,7 +59,7 @@ public class NozzleTrigger : MonoBehaviour
         {
             particleSystem.Play();
         }
-        else if (!isFueling) 
+        else if (!isFueling)
         {
             particleSystem.Stop();
         }
@@ -89,13 +86,13 @@ public class NozzleTrigger : MonoBehaviour
 
     public void StartFueling()
     {
-        if (inHand && !isFueling)
+        if (inHand)
             isFueling = true;
     }
 
     public void StopFueling()
     {
-        if (inHand && isFueling)
+        if (inHand)
             isFueling = false;
     }
 }

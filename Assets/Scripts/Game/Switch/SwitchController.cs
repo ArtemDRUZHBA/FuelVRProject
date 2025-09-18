@@ -19,5 +19,5 @@ public class SwitchController : MonoBehaviour
 
         foreach (NozzleTrigger nozzle in nozzles)
             nozzle.enabled = isEnabled;
-    }
+    } 
 }
