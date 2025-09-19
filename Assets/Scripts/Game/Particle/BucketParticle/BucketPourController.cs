@@ -4,13 +4,17 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class BucketPourController : MonoBehaviour
 {
-    [Header("Порог наклона")]
+    [Header("Порог наклона по X")]
     [SerializeField] private float pourAngleThreshold = 60f;
 
-    [Header("Particle System")]
-    [SerializeField] private ParticleSystem sandParticles;
+    [Header("Ограничение наклона по X")]
+    [SerializeField] private float minAngleX = -111f;
+    [SerializeField] private float maxAngleX = 111f;
 
-    [Header("Bottom Handle")]
+    [Header("Системы песка")]
+    [SerializeField] private ParticleSystem[] sandParticles;
+
+    [Header("Ручка снизу")]
     [SerializeField] private XRGrabInteractable bottomHandle;
 
     private XRGrabInteractable bucketGrab;
@@ -19,7 +23,7 @@ public class BucketPourController : MonoBehaviour
 
     private void Awake()
     {
-        bucketGrab = GetComponent<XRGrabInteractable>();
+        bucketGrab = GetComponentInChildren<XRGrabInteractable>();
     }
 
     private void OnEnable()
@@ -38,6 +42,8 @@ public class BucketPourController : MonoBehaviour
 
         bottomHandle.selectEntered.RemoveListener(OnBottomGrabbed);
         bottomHandle.selectExited.RemoveListener(OnBottomReleased);
+
+        StopAllParticles();
     }
 
     private void OnBucketGrabbed(SelectEnterEventArgs args) => isHeldByBucketHand = true;
@@ -47,25 +53,50 @@ public class BucketPourController : MonoBehaviour
 
     private void Update()
     {
+        ClampRotation();
+
         if (isHeldByBucketHand && isHeldByBottomHand)
         {
-            float angleX = Mathf.Abs(transform.localEulerAngles.x);
-            float angleZ = Mathf.Abs(transform.localEulerAngles.z);
+            float angleX = transform.localEulerAngles.x;
+            angleX = angleX > 180f ? angleX - 360f : angleX;
 
-            // Учитываем переход через 360°
-            angleX = angleX > 180 ? 360 - angleX : angleX;
-            angleZ = angleZ > 180 ? 360 - angleZ : angleZ;
+            bool shouldPour = angleX > pourAngleThreshold || angleX < -pourAngleThreshold;
 
-            bool shouldPour = angleX > pourAngleThreshold || angleZ > pourAngleThreshold;
-
-            if (shouldPour && !sandParticles.isPlaying)
-                sandParticles.Play();
-            else if (!shouldPour && sandParticles.isPlaying)
-                sandParticles.Stop();
+            if (shouldPour)
+                PlayAllParticles();
+            else
+                StopAllParticles();
         }
         else
         {
-            sandParticles.Stop();
+            StopAllParticles();
+        }
+    }
+
+    private void ClampRotation()
+    {
+        Vector3 angles = transform.localEulerAngles;
+        float angleX = angles.x > 180f ? angles.x - 360f : angles.x;
+        angleX = Mathf.Clamp(angleX, minAngleX, maxAngleX);
+        angles.x = angleX < 0f ? 360f + angleX : angleX;
+        transform.localEulerAngles = new Vector3(angles.x, angles.y, angles.z);
+    }
+
+    private void PlayAllParticles()
+    {
+        foreach (var ps in sandParticles)
+        {
+            if (!ps.isPlaying)
+                ps.Play();
+        }
+    }
+
+    private void StopAllParticles()
+    {
+        foreach (var ps in sandParticles)
+        {
+            if (ps.isPlaying)
+                ps.Stop();
         }
     }
 }

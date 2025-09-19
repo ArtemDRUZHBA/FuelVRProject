@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4a099e8cb00439343a38bfcd63356444
+guid: 50007291f41d70447934e453d53f2347
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -108,10 +108,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 287902
-  packageName: Low Poly Casual Bucket
-  packageVersion: 
-  assetPath: Assets/Low Poly Casual Bucket/Objects/Meshes/Bucket.fbx
-  uploadId: 0
