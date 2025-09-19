@@ -8,6 +8,8 @@ TagManager:
   - NozzleSocket
   - FuelSocket
   - FuelTank
+  - SandSource
+  - SandIntakeZone
   layers:
   - Default
   - TransparentFX

@@ -13395,6 +13395,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player VR
       objectReference: {fileID: 0}
+    - target: {fileID: 4349825438221665608, guid: ce74f047368df21488bf17ac2acd48b9, type: 3}
+      propertyPath: m_CastDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8528432874825751235, guid: ce74f047368df21488bf17ac2acd48b9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25.612
@@ -13434,6 +13438,10 @@ PrefabInstance:
     - target: {fileID: 8528432874825751235, guid: ce74f047368df21488bf17ac2acd48b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9150522219746636964, guid: ce74f047368df21488bf17ac2acd48b9, type: 3}
+      propertyPath: m_CastDistance
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24626,6 +24634,18 @@ PrefabInstance:
     - target: {fileID: 7210289025481816337, guid: c08a9ed0b14a0cb409be9086de9fcb24, type: 3}
       propertyPath: m_Name
       value: Bucket1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9048879029467337553, guid: c08a9ed0b14a0cb409be9086de9fcb24, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9048879029467337553, guid: c08a9ed0b14a0cb409be9086de9fcb24, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9048879029467337553, guid: c08a9ed0b14a0cb409be9086de9fcb24, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 9048879029467337553, guid: c08a9ed0b14a0cb409be9086de9fcb24, type: 3}
       propertyPath: m_LocalPosition.x
