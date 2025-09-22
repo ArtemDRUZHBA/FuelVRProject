@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 2311620730873078892}
   - component: {fileID: 2365393390779254249}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: FuelPS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -883,7 +883,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.7330341, g: 0.8396226, b: 0.34456214, a: 1}
+      maxColor: {r: 0.77254903, g: 0.6745098, b: 0.09019608, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5501,8 +5501,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7d53f22039b5eba47b74dccdc78bc951, type: 2}
+  - {fileID: 2100000, guid: 7d53f22039b5eba47b74dccdc78bc951, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5569,8 +5569,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FuelParticleSystem
   leakPS: {fileID: 7718478050907817423}
-  puddlePrefab: {fileID: 153735293875974548, guid: be417fb9fd697fc4ea8bff357bb5f289, type: 3}
-  sandMarkPrefab: {fileID: 153735293875974548, guid: 64fde9b0203e71e4fb1b09a10765c00e, type: 3}
+  puddlePrefabs:
+  - {fileID: 7278933046028983064, guid: b912d9e452f0fe04d9cb7582625d3487, type: 3}
+  - {fileID: 648314618939956365, guid: e1ebc30aad255a7468abe97565a884a4, type: 3}
+  - {fileID: 1384836165393737261, guid: a56bd2b9aa3bac4419ec7650e9e4f522, type: 3}
+  - {fileID: 8766950515780761022, guid: 19ea81eaa50ae9642998f72b93c80d09, type: 3}
+  - {fileID: 6918117563551281926, guid: bf3e1c7d1a99e4640b65e0feeb2f53fc, type: 3}
+  - {fileID: 5646658563032425943, guid: 543a2319cb2b1534186f07de070a866f, type: 3}
+  - {fileID: 8396360786888157631, guid: 1d33806d838a8d2408243cb6d00b58e6, type: 3}
+  fuelMaterial: {fileID: 2100000, guid: 7d53f22039b5eba47b74dccdc78bc951, type: 2}
+  sandMaterial: {fileID: 2100000, guid: fa542ab47cc7bb3418c35926f8cab963, type: 2}
   isSandMode: 0
 --- !u!1 &7192183839651980655
 GameObject:
@@ -5979,9 +5987,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NozzleTrigger
   particle: {fileID: 6949794388623417761}
+  fuelingSpeed: 3
   inHand: 0
   isFueling: 0
-  fuelingSpeed: 3
 --- !u!114 &6079239484748248194
 MonoBehaviour:
   m_ObjectHideFlags: 0

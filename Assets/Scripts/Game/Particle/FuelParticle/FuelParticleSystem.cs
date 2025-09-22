@@ -8,13 +8,15 @@ public class FuelParticleSystem : MonoBehaviour
     [SerializeField] private ParticleSystem leakPS;
 
     [Header("Префаб лужи")]
-    [SerializeField] private GameObject puddlePrefab;
-    [SerializeField] private GameObject sandMarkPrefab;
+    [SerializeField] private GameObject[] puddlePrefabs;
+
+    [Header("Материалы")]
+    [SerializeField] private Material fuelMaterial, sandMaterial;
 
     [Header("Режим работы")]
     [SerializeField] private bool isSandMode = false;
 
-    private List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>();
+    private List<ParticleCollisionEvent> collisionEvents = new(); //List<ParticleCollisionEvent>();
 
     private void Awake()
     {
@@ -36,30 +38,26 @@ public class FuelParticleSystem : MonoBehaviour
 
         var evt = collisionEvents[0];
         Vector3 hitPoint = evt.intersection;
-        Quaternion rot = Quaternion.Euler(90f, 0f, 0f);
 
         if (isSandMode)
         {
             if (other.layer == puddleLayer)
             {
-                // Песок попал в лужу удаляем лужу и создаём песок
-                Destroy(other.gameObject);
-                Instantiate(sandMarkPrefab, hitPoint, rot);
+                SpawnRandomPuddle(hitPoint, sandMaterial);
                 return;
             }
 
             if (other.layer == groundLayer)
             {
                 // Песок попал в землю создаём песчаную кучку
-                Instantiate(sandMarkPrefab, hitPoint, rot);
+                SpawnRandomPuddle(hitPoint, sandMaterial);
                 return;
             }
 
             if (other.layer == sandMarkLayer)
             {
                 // Песок попал в существующую кучку увеличиваем её
-                var grower = other.GetComponent<FuelPuddleGrower>();
-                if (grower != null)
+                if (other.TryGetComponent(out FuelPuddleGrower grower))
                 {
                     grower.Grow();
                 }
@@ -71,20 +69,35 @@ public class FuelParticleSystem : MonoBehaviour
             if (other.layer == groundLayer)
             {
                 // Топливо попало в землю создаём лужу
-                GameObject puddle = Instantiate(puddlePrefab, hitPoint, rot);
+                SpawnRandomPuddle(hitPoint, fuelMaterial);
                 return;
             }
 
             if (other.layer == puddleLayer)
             {
                 // Топливо попало в лужу увеличиваем её
-                var grower = other.GetComponent<FuelPuddleGrower>();
-                if (grower != null)
+                if (other.TryGetComponent(out FuelPuddleGrower grower))
                 {
                     grower.Grow();
                 }
                 return;
             }
         }
+    }
+    private GameObject SpawnRandomPuddle(Vector3 pos, Material mat)
+    {
+        int index = Random.Range(0, puddlePrefabs.Length);
+        GameObject puddleX = puddlePrefabs[index];
+
+        GameObject puddle = Instantiate(puddleX, pos, puddleX.transform.rotation);
+
+        // Назначаем материал
+        var renderer = puddle.GetComponentInChildren<MeshRenderer>();
+        if (renderer != null && mat != null)
+        {
+            renderer.material = mat;
+        }
+
+        return puddle;
     }
 }

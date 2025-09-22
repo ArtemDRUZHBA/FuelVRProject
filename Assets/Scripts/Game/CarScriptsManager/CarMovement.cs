@@ -40,14 +40,7 @@ public class CarMovement : MonoBehaviour
 
     public void StartMovement()
     {
-        if (waypoints.Count > 0)
-        {
-            canMove = true;
-        }
-        else
-        {
-            canMove = false;
-        }
+        canMove = waypoints.Count > 0;
     }
 
     private void FixedUpdate()
@@ -59,7 +52,7 @@ public class CarMovement : MonoBehaviour
     {
         if (!canMove)
             return;
-        CheakWaypoint();
+        CheckWaypoint();
 
         if (!isFueling)
         {
@@ -88,7 +81,7 @@ public class CarMovement : MonoBehaviour
         isFueling = false;
     }
 
-    private void CheakWaypoint()
+    private void CheckWaypoint()
     {
         if (currentWaypointIndex == 0)
             return;

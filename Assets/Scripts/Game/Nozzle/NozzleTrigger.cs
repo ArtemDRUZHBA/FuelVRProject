@@ -6,6 +6,9 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class NozzleTrigger : MonoBehaviour
 {
+    [Header("XR Input Action (триггер контроллера)")]
+    [SerializeField] private InputActionReference triggerAction;
+
     [SerializeField] private GameObject particle;
     private ParticleSystem particleSystem;
 
@@ -26,8 +29,24 @@ public class NozzleTrigger : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         particleSystem = particle.GetComponent<ParticleSystem>();
         grab = GetComponent<XRGrabInteractable>();
-    }
 
+        // Подписываемся на события XRGrabInteractable
+        grab.activated.AddListener(OnActivated);
+        grab.deactivated.AddListener(OnDeactivated);
+    }
+    private void Update()
+    {
+        // Проверяем кнопку на VR джойстике
+        if (inHand && triggerAction != null)
+        {
+            bool pressed = triggerAction.action.IsPressed();
+
+            if (pressed && !isFueling)
+                StartFueling();
+            else if (!pressed && isFueling)
+                StopFueling();
+        }
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -106,5 +125,21 @@ public class NozzleTrigger : MonoBehaviour
     {
         if (inHand)
             isFueling = false;
+    }
+    private void OnDestroy()
+    {
+        // Отписка, чтобы не было утечек
+        grab.activated.RemoveListener(OnActivated);
+        grab.deactivated.RemoveListener(OnDeactivated);
+    }
+
+    private void OnActivated(ActivateEventArgs args)
+    {
+        if (inHand) StartFueling();
+    }
+
+    private void OnDeactivated(DeactivateEventArgs args)
+    {
+        if (inHand) StopFueling();
     }
 }
