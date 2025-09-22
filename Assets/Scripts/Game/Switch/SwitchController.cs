@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SwitchController : MonoBehaviour
 {
+    [SerializeField] private HoseLeakSpawner hoseLeakSpawner;
     [SerializeField] private NozzleTrigger[] nozzles;
     private Animator animator;
     private bool isEnabled = true;
@@ -14,10 +15,14 @@ public class SwitchController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         isEnabled = !isEnabled;
         animator.SetBool("isEnabled", isEnabled);
 
         foreach (NozzleTrigger nozzle in nozzles)
             nozzle.enabled = isEnabled;
-    } 
+
+        if (hoseLeakSpawner != null)
+            hoseLeakSpawner.StopLeak();
+    }
 }
