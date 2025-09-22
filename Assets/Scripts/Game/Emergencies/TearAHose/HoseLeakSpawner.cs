@@ -18,7 +18,9 @@ public class HoseLeakSpawner : MonoBehaviour
 
     public void SpawnLeak()
     {
+        print("ћетод SpawnLeak запущен");
         if (spawnedPS != null) return; // уже создано
+        print("ћетод SpawnLeak работает дальше");
 
         // »щем шланг
         var hose = GameObject.Find(hoseObjectName);
