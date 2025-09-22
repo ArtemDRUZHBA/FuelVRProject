@@ -1,19 +1,51 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class NozzleTrigger : MonoBehaviour
 {
-    public bool inHand;
-    public bool isFueling;
+    [Header("XR Input Action (триггер контроллера)")]
+    [SerializeField] private InputActionReference triggerAction;
+
+    [SerializeField] private GameObject particle;
+    private ParticleSystem particleSystem;
+
+
     public float fuelingSpeed;
 
     private FuelTank fuelTank;
     private Rigidbody rb;
+    private XRGrabInteractable grab;
+    private IXRSelectInteractor interactor;
+
+    public bool inHand;
+    public bool isFueling;
+    private bool triggerPressedLastFrame;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        particleSystem = particle.GetComponent<ParticleSystem>();
+        grab = GetComponent<XRGrabInteractable>();
+
+        // Подписываемся на события XRGrabInteractable
+        grab.activated.AddListener(OnActivated);
+        grab.deactivated.AddListener(OnDeactivated);
+    }
+    private void Update()
+    {
+        // Проверяем кнопку на VR джойстике
+        if (inHand && triggerAction != null)
+        {
+            bool pressed = triggerAction.action.IsPressed();
+
+            if (pressed && !isFueling)
+                StartFueling();
+            else if (!pressed && isFueling)
+                StopFueling();
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -49,10 +81,25 @@ public class NozzleTrigger : MonoBehaviour
 
     private void Fueling()
     {
-        if (fuelTank != null)
-            Debug.Log(isFueling + " " + fuelTank.name);
         if (isFueling && fuelTank != null)
+        {
             fuelTank.Fueling(fuelingSpeed);
+            particleSystem.Stop();
+        }
+        else if (isFueling && fuelTank == null)
+        {
+            particleSystem.Play();
+        }
+        else if (!isFueling) 
+        {
+            particleSystem.Stop();
+        }
+    }
+
+    private void OnDisable()
+    {
+        isFueling = false;
+        particleSystem.Stop();
     }
 
     public void NozzleTaked()
@@ -70,13 +117,29 @@ public class NozzleTrigger : MonoBehaviour
 
     public void StartFueling()
     {
-        if (inHand && !isFueling)
+        if (inHand)
             isFueling = true;
     }
 
     public void StopFueling()
     {
-        if (inHand && isFueling)
+        if (inHand)
             isFueling = false;
+    }
+    private void OnDestroy()
+    {
+        // Отписка, чтобы не было утечек
+        grab.activated.RemoveListener(OnActivated);
+        grab.deactivated.RemoveListener(OnDeactivated);
+    }
+
+    private void OnActivated(ActivateEventArgs args)
+    {
+        if (inHand) StartFueling();
+    }
+
+    private void OnDeactivated(DeactivateEventArgs args)
+    {
+        if (inHand) StopFueling();
     }
 }

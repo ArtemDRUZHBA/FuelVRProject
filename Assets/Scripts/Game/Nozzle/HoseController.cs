@@ -8,7 +8,7 @@ public class HoseController : MonoBehaviour
     public Transform hoseEndPoint;    // пистолет (конец)
     public Transform[] bones;     // кости шланга
     public float maxLength = 5f;  // максимальная длина
-    public float smooth = 5f;     // плавность движения
+    public float smooth = 100f;     // плавность движения
 
     private float boneSpacing;
 

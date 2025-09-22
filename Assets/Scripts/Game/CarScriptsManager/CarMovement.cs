@@ -9,9 +9,9 @@ public class CarMovement : MonoBehaviour
 
     private Animator animator;
 
-    public float speed = 25f;
+    public float speed = 9f;
     public float turnSpeed = 2f;
-    public float closeEnoughDistance = 3.5f;
+    public float closeEnoughDistance = 0.5f;
 
     public bool canMove;
     private bool isFueling;
@@ -40,14 +40,7 @@ public class CarMovement : MonoBehaviour
 
     public void StartMovement()
     {
-        if (waypoints.Count > 0)
-        {
-            canMove = true;
-        }
-        else
-        {
-            canMove = false;
-        }
+        canMove = waypoints.Count > 0;
     }
 
     private void FixedUpdate()
@@ -58,12 +51,13 @@ public class CarMovement : MonoBehaviour
     private void MoveAlongPath()
     {
         if (!canMove)
-            return; 
-        CheakWaypoint();
+            return;
+        CheckWaypoint();
 
         if (!isFueling)
         {
-            animator.SetBool("canMove", true);
+            if (animator != null)
+                animator.SetBool("canMove", true);
 
             Transform targetWaypoint = waypoints[currentWaypointIndex];
 
@@ -87,7 +81,7 @@ public class CarMovement : MonoBehaviour
         isFueling = false;
     }
 
-    private void CheakWaypoint()
+    private void CheckWaypoint()
     {
         if (currentWaypointIndex == 0)
             return;

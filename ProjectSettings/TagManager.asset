@@ -8,6 +8,8 @@ TagManager:
   - NozzleSocket
   - FuelSocket
   - FuelTank
+  - SandSource
+  - SandIntakeZone
   layers:
   - Default
   - TransparentFX
@@ -16,8 +18,8 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
-  - 
+  - Puddle
+  - SandMark
   - 
   - 
   - 

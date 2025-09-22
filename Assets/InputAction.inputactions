@@ -14,15 +14,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "New action1",
-                    "type": "Button",
-                    "id": "58e4a5bf-6800-4788-a7db-e33185e87283",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -34,17 +25,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "TriggerPress",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "55532be4-a03d-4efe-a4e2-69bb75602864",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "New action1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
