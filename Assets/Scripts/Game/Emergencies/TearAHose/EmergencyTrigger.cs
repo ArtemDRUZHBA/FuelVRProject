@@ -31,6 +31,9 @@ public class EmergencyTrigger : MonoBehaviour
                 spawner.SpawnLeak();
             }
             else Debug.LogWarning("Spawner Null метод не запущен!");
+
+            FindObjectOfType<TaskUIControllerFromFile>().CompleteTask();
+
         }
     }
 
