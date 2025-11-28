@@ -2,28 +2,60 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using TMPro;
+using JetBrains.Annotations;
+using System.Runtime.CompilerServices;
+using UnityEngine.UI;
+using Unity.VisualScripting;
+using UnityEngine.InputSystem;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class LoadingSceneManager : MonoBehaviour
 {
-    public TMP_Text loadingText;
+    [SerializeField] private string _buttonName;
+    [SerializeField] private GameObject _progressBar;
+    [SerializeField] private Image _progressBarImage;
+    [SerializeField] private TMP_Text _loadingText;
+    [SerializeField] private GameObject _pressKeyHint;
 
-    void Start()
+    public InputFeatureUsage<bool> triggerButton;
+
+    AsyncOperation asyncOperation;
+
+    public void Start()
     {
-        StartCoroutine(LoadGameScene());
+        if (SceneManager.GetActiveScene().name == "LoadScene") StartCoroutine("AsyncLoadScene", PlayerPrefs.GetString("current_scene"));
+    }
+    
+    public void ActivateSceneLoading(string sceneName)
+    {
+        _buttonName = sceneName;
+        PlayerPrefs.SetString("current_scene", _buttonName);
+        SceneManager.LoadScene("LoadScene");
     }
 
-    IEnumerator LoadGameScene()
+    IEnumerator AsyncLoadScene(string sceneName)
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(2);
-        operation.allowSceneActivation = false;
+        float loadingProgress;
+        asyncOperation = SceneManager.LoadSceneAsync(sceneName);
+        _progressBar.SetActive(true);
 
-        while (!operation.isDone)
+        asyncOperation.allowSceneActivation = false;
+
+        while (asyncOperation.progress < 0.9f)
         {
-            if (operation.progress >= 0.9f)
-            {
-                operation.allowSceneActivation = true;
-            }
-            yield return null;
+            loadingProgress = Mathf.Clamp01(asyncOperation.progress / 0.9f);
+            _loadingText.text = $"Загрузка ... {(loadingProgress * 100).ToString("0")}%";
+            _progressBarImage.fillAmount = loadingProgress;
+            yield return true;
         }
+        _progressBar.SetActive(false);
+        _pressKeyHint.SetActive(true);
+    }
+
+    private void Update()
+    {
+        if (_pressKeyHint.activeSelf)
+            if (Input.anyKeyDown) asyncOperation.allowSceneActivation = true;
     }
 }

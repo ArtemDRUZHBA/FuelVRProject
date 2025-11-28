@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 9d5de925607ff9e46beb7e42460984f2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _fuelPistolPrefab: {fileID: 8536646911747647179, guid: 9392faf6e7509e4448587c487de4c2ee, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

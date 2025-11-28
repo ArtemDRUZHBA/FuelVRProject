@@ -91,7 +91,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 1, z: 0.2}
+  m_LocalScale: {x: 0.05, y: 0.5, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3195920774200214936}
@@ -111,8 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anchorPoint: {fileID: 0}
-  exitPoint: {fileID: 0}
   hoseEndPoint: {fileID: 0}
+  hoseStartPoint: {fileID: 0}
   bones:
   - {fileID: 8900203314571609903}
   - {fileID: 634507541140813302}
@@ -122,7 +122,7 @@ MonoBehaviour:
   - {fileID: 8795672511225818730}
   - {fileID: 7605500928579089065}
   - {fileID: 6348470044727468814}
-  maxLength: 5
+  maxLength: 30
   smooth: 30
 --- !u!1 &3362177969668077873
 GameObject:

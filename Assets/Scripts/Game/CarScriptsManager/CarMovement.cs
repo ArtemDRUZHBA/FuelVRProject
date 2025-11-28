@@ -67,6 +67,11 @@ public class CarMovement : MonoBehaviour
             if (Vector3.Distance(transform.position, targetWaypoint.position) < .5f)
             {
                 currentWaypointIndex++;
+                if (currentWaypointIndex == waypoints.Count)
+                {
+                    gameObject.SetActive(false);
+                    waypoints = new List<Transform>();
+                }
             }
         }
         else

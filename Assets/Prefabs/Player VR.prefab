@@ -5569,6 +5569,7 @@ GameObject:
   - component: {fileID: 7494599480218694849}
   - component: {fileID: 7640011024797899071}
   - component: {fileID: 1480215421769352057}
+  - component: {fileID: 4470050725676044365}
   m_Layer: 0
   m_Name: Right Controller
   m_TagString: Untagged
@@ -5740,6 +5741,29 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+--- !u!136 &4470050725676044365
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5373988757373412296}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.06
+  m_Height: 0.19
+  m_Direction: 2
+  m_Center: {x: 0, y: -0.03, z: -0.05}
 --- !u!1 &5671659275755354479
 GameObject:
   m_ObjectHideFlags: 0

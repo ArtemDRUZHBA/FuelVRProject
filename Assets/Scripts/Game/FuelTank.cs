@@ -12,7 +12,7 @@ public class FuelTank : MonoBehaviour
 
     public bool CanFueling() => isOpen;
 
-    public void Fueling(float fuelingSpeed)
+    public void FuelInTank(float fuelingSpeed)
     {
         if (!isFull)
             fuelInTank += fuelingSpeed * Time.deltaTime;

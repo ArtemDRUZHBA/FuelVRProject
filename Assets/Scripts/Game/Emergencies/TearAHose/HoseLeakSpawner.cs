@@ -9,12 +9,10 @@ public class HoseLeakSpawner : MonoBehaviour
     [SerializeField] private string hoseEndName = "HoseEnd";
 
     [Header("Префаб партиклов утечки")]
-    [SerializeField] private GameObject fuelPSPrefab;
+    [SerializeField] private ParticleSystem fuelPSPrefab;
 
-    [Header("Ссылка на HoseController (шланг)")]
-    [SerializeField] private HoseController hoseController;
 
-    private GameObject spawnedPS;
+    private ParticleSystem spawnedPS;
 
     public void SpawnLeak()
     {
@@ -23,12 +21,6 @@ public class HoseLeakSpawner : MonoBehaviour
         // Ищем шланг
         var hose = GameObject.Find(hoseObjectName);
         if (hose == null) return;
-
-        // Находим HoseController
-        if (hoseController == null)
-            hoseController = hose.GetComponent<HoseController>();
-        if (hoseController != null)
-            hoseController.hoseEndPoint = null;
 
         // Находим HoseEnd
         var hoseEnd = hose.transform.FindDeepChild(hoseEndName);
@@ -48,8 +40,8 @@ public class HoseLeakSpawner : MonoBehaviour
         {
             var ps = spawnedPS.GetComponent<ParticleSystem>();
             if (ps != null) ps.Stop();
-            Destroy(spawnedPS, 1f);
-            spawnedPS = null;
+            //Destroy(spawnedPS, 1f);
+            //spawnedPS = null;
         }
     }
 }

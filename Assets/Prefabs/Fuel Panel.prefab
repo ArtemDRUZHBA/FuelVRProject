@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5237743625804679930}
   - component: {fileID: 4931748597363711096}
   m_Layer: 0
-  m_Name: Switch002
+  m_Name: Switch0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,7 +176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e2d02fe92fc0d4587301dd0836c7a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchController
-  nozzles: []
+  hoseLeakSpawner: {fileID: 0}
+  _fuelColumn: {fileID: 0}
+  _fuelColumnLock: 1
+  _colController: {fileID: 0}
 --- !u!1 &518130186253378123
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,7 +613,7 @@ GameObject:
   - component: {fileID: 3006311850135937890}
   - component: {fileID: 8605023832720290326}
   m_Layer: 0
-  m_Name: Switch001
+  m_Name: Switch1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -770,7 +773,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e2d02fe92fc0d4587301dd0836c7a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchController
-  nozzles: []
+  hoseLeakSpawner: {fileID: 0}
+  _fuelColumn: {fileID: 0}
+  _fuelColumnLock: 1
+  _colController: {fileID: 0}
 --- !u!1 &4282354180544442862
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,8 +1032,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1073949978607759137}
   - {fileID: 1574768909900401261}
+  - {fileID: 1073949978607759137}
   m_Father: {fileID: 6953426581328045709}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5494413054187209750
@@ -1057,7 +1063,7 @@ Transform:
   m_GameObject: {fileID: 5494413054187209750}
   serializedVersion: 2
   m_LocalRotation: {x: -0.00000005960463, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.07, y: 0, z: 0.128}
+  m_LocalPosition: {x: -0.07, y: 0, z: 0.128}
   m_LocalScale: {x: 1.1161002, y: 1.1161002, z: 0.44311702}
   m_ConstrainProportionsScale: 0
   m_Children: []

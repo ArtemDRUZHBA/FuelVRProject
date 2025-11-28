@@ -4,8 +4,7 @@ using DG.Tweening;
 
 public class LoadingAnimation : MonoBehaviour
 {
-    public TMP_Text loadingText;
-    public TMP_Text tipText;
+    [SerializeField] private TMP_Text tipText;
 
     string[] tips =
     {
@@ -20,21 +19,7 @@ public class LoadingAnimation : MonoBehaviour
 
     void Start()
     {
-        StartLoadingAnimation();
         ChangeTip();
-    }
-
-    void StartLoadingAnimation()
-    {
-        Sequence sequence = DOTween.Sequence();
-
-        sequence.AppendCallback(() => loadingText.text = "Загрузка.")
-                .AppendInterval(0.5f)
-                .AppendCallback(() => loadingText.text = "Загрузка..")
-                .AppendInterval(0.5f)
-                .AppendCallback(() => loadingText.text = "Загрузка...")
-                .AppendInterval(0.5f)
-                .SetLoops(-1);
     }
 
     void ChangeTip()

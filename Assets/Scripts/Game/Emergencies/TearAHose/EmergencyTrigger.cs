@@ -1,10 +1,14 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EmergencyTrigger : MonoBehaviour
 {
     [SerializeField] private CarMovement car;       // ссылка на машину
-    [SerializeField] private Transform nozzle; // сам пистолет
+    [SerializeField] private GameObject _fuelTank;
+    [SerializeField] private Transform _fuelPistol; // сам пистолет
     [SerializeField] private ParticleSystem leakPS; // партиклы утечки
+    [SerializeField] private CreateFuelPistol _fuelPump;
+    private HoseController _hoseEndPoint;
 
     private bool triggered = false;
 
@@ -17,7 +21,7 @@ public class EmergencyTrigger : MonoBehaviour
             triggered = true;
 
             // Прикрепляем пистолет к машине. Машина начинает движение
-            AttachNozzleToCar();
+            AttachFuelPistolToCar();
             car.StopFueling();
 
             // Запускаем утечку через HoseLeakSpawner
@@ -30,12 +34,38 @@ public class EmergencyTrigger : MonoBehaviour
         }
     }
 
-    private void AttachNozzleToCar()
+    private void AttachFuelPistolToCar()
     {
-        if (nozzle != null && car != null)
+        foreach (Transform fuelPistolAnchor in _fuelPump.fuelPistolAnchors)
         {
-            nozzle.SetParent(car.transform);
-            Debug.Log("Пистолет прикреплён к машине через EmergencyTrigger");
+            if (fuelPistolAnchor.name == "FuelPistolAnchor3")
+            {
+                HoseController hosePoint = GameObject.Find("Hose3").GetComponent<HoseController>();
+                hosePoint.hoseEndPoint = null;
+                hosePoint.hoseStartPoint = null;
+                Debug.Log("Отсоединили шланг от пистолета");
+
+                foreach (GameObject fuelPistol in _fuelPump.fuelPistols)
+                {
+                    if (fuelPistol.name == "FuelPistol3")
+                    {
+                        _fuelPistol = fuelPistol.transform;
+                        _fuelPistol.SetParent(_fuelTank.transform);
+                        _fuelPistol.transform.localPosition = Vector3.zero;
+                        _fuelPistol.transform.localRotation = Quaternion.identity;
+                        
+                        Debug.Log("Пистолет прикреплён к машине через EmergencyTrigger");
+                        //foreach (GameObject hose in fuelPistol.transform)
+                        //{
+                        //    if (hose.name == "HoseEndPoint")
+                        //    {
+                                
+                                
+                        //    }
+                        //}
+                    }
+                }
+            }
         }
     }
 }
