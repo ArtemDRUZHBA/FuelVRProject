@@ -23,7 +23,13 @@ public class CreateHose : MonoBehaviour
             }
 
             // Создаём шланг
-            GameObject hose = Instantiate(_hosePrefab, fuelPistolAncor, true);
+            //GameObject hose = Instantiate(_hosePrefab, fuelPistolAncor, true);
+            //hose.transform.localPosition = Vector3.zero;
+            //hose.transform.localRotation = Quaternion.identity;
+
+            GameObject hose = Instantiate(_hosePrefab, startPoint.position, Quaternion.identity);
+            hose.transform.SetParent(fuelPistolAncor, true);
+
             hose.name = $"Hose{i}";
             Debug.Log($"Создан шланг {hose}");
 
@@ -31,7 +37,6 @@ public class CreateHose : MonoBehaviour
             HoseController hc = hose.GetComponent<HoseController>();
             hc.anchorPoint = startPoint;
             hc.hoseEndPoint = additionalPoint;
-            hc.hoseStartPoint = endPoint;
         }
     }
 }

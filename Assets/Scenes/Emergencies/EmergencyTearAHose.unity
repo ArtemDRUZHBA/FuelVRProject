@@ -15924,7 +15924,7 @@ PrefabInstance:
     - target: {fileID: 4827782361285723227, guid: 986c3d0d840c193499421d18558ecada, type: 3}
       propertyPath: _hosePrefab
       value: 
-      objectReference: {fileID: 4253336158925609786, guid: db770acbc0de9b144967195818591e53, type: 3}
+      objectReference: {fileID: 1078811016179864064, guid: 333a02df9ffa2464d8db5af1298968da, type: 3}
     - target: {fileID: 7117034815808417400, guid: 986c3d0d840c193499421d18558ecada, type: 3}
       propertyPath: m_Name
       value: Fuel Pump 3D (2)
@@ -37710,6 +37710,63 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 273aca9379ca3274f9a4419daaa2abaa, type: 3}
+--- !u!1001 &8625397165594100706
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1078811016179864064, guid: 333a02df9ffa2464d8db5af1298968da, type: 3}
+      propertyPath: m_Name
+      value: Hose5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205815652648252647, guid: 333a02df9ffa2464d8db5af1298968da, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 48.458
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205815652648252647, guid: 333a02df9ffa2464d8db5af1298968da, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.050000668
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205815652648252647, guid: 333a02df9ffa2464d8db5af1298968da, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 26.646067
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205815652648252647, guid: 333a02df9ffa2464d8db5af1298968da, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205815652648252647, guid: 333a02df9ffa2464d8db5af1298968da, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205815652648252647, guid: 333a02df9ffa2464d8db5af1298968da, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205815652648252647, guid: 333a02df9ffa2464d8db5af1298968da, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205815652648252647, guid: 333a02df9ffa2464d8db5af1298968da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205815652648252647, guid: 333a02df9ffa2464d8db5af1298968da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205815652648252647, guid: 333a02df9ffa2464d8db5af1298968da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 333a02df9ffa2464d8db5af1298968da, type: 3}
 --- !u!4 &8634277125255789864
 Transform:
   m_ObjectHideFlags: 0
@@ -39174,3 +39231,4 @@ SceneRoots:
   - {fileID: 1214961322}
   - {fileID: 407286680}
   - {fileID: 1218100526}
+  - {fileID: 8625397165594100706}

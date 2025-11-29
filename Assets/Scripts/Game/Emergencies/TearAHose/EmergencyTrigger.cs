@@ -45,7 +45,6 @@ public class EmergencyTrigger : MonoBehaviour
             {
                 HoseController hosePoint = GameObject.Find("Hose3").GetComponent<HoseController>();
                 hosePoint.hoseEndPoint = null;
-                hosePoint.hoseStartPoint = null;
                 Debug.Log("Отсоединили шланг от пистолета");
 
                 foreach (GameObject fuelPistol in _fuelPump.fuelPistols)
