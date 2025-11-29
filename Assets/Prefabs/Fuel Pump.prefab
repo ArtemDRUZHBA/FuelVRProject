@@ -612,7 +612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8862e32a5785b94fb09a1a2a9ca77e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CreateHose
-  _hosePrefab: {fileID: 314478652415273450, guid: 7822a1185d3b0cf49895737fc2b3ee5b, type: 3}
+  _hosePrefab: {fileID: 975487500588569040, guid: 24ec0d60e3cac2b41b89b6da84921191, type: 3}
 --- !u!1 &7366386483995719211
 GameObject:
   m_ObjectHideFlags: 0
