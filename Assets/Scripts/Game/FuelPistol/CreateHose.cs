@@ -25,6 +25,7 @@ public class CreateHose : MonoBehaviour
             // Создаём шланг
             GameObject hose = Instantiate(_hosePrefab, fuelPistolAncor, true);
             hose.name = $"Hose{i}";
+            Debug.Log($"Создан шланг {hose}");
 
             // Привязываем шланг
             HoseController hc = hose.GetComponent<HoseController>();

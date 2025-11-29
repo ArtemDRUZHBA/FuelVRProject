@@ -4087,7 +4087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11270,6 +11270,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Device Simulator
       objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15920,7 +15924,7 @@ PrefabInstance:
     - target: {fileID: 4827782361285723227, guid: 986c3d0d840c193499421d18558ecada, type: 3}
       propertyPath: _hosePrefab
       value: 
-      objectReference: {fileID: 314478652415273450, guid: 7822a1185d3b0cf49895737fc2b3ee5b, type: 3}
+      objectReference: {fileID: 4253336158925609786, guid: db770acbc0de9b144967195818591e53, type: 3}
     - target: {fileID: 7117034815808417400, guid: 986c3d0d840c193499421d18558ecada, type: 3}
       propertyPath: m_Name
       value: Fuel Pump 3D (2)
@@ -24052,63 +24056,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7189401197149918874}
   m_Mesh: {fileID: -2356839498367080463, guid: 329d44796b025374b865113fa8521ebf, type: 3}
---- !u!1001 &3254850483269607542
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 314478652415273450, guid: 7822a1185d3b0cf49895737fc2b3ee5b, type: 3}
-      propertyPath: m_Name
-      value: Hose2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9193831312501431242, guid: 7822a1185d3b0cf49895737fc2b3ee5b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 29.7315
-      objectReference: {fileID: 0}
-    - target: {fileID: 9193831312501431242, guid: 7822a1185d3b0cf49895737fc2b3ee5b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 9193831312501431242, guid: 7822a1185d3b0cf49895737fc2b3ee5b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 44.10234
-      objectReference: {fileID: 0}
-    - target: {fileID: 9193831312501431242, guid: 7822a1185d3b0cf49895737fc2b3ee5b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9193831312501431242, guid: 7822a1185d3b0cf49895737fc2b3ee5b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9193831312501431242, guid: 7822a1185d3b0cf49895737fc2b3ee5b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9193831312501431242, guid: 7822a1185d3b0cf49895737fc2b3ee5b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9193831312501431242, guid: 7822a1185d3b0cf49895737fc2b3ee5b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9193831312501431242, guid: 7822a1185d3b0cf49895737fc2b3ee5b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9193831312501431242, guid: 7822a1185d3b0cf49895737fc2b3ee5b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7822a1185d3b0cf49895737fc2b3ee5b, type: 3}
 --- !u!33 &3268384366562659018
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -39227,4 +39174,3 @@ SceneRoots:
   - {fileID: 1214961322}
   - {fileID: 407286680}
   - {fileID: 1218100526}
-  - {fileID: 3254850483269607542}

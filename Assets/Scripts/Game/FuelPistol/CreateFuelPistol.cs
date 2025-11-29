@@ -40,7 +40,6 @@ public class CreateFuelPistol : MonoBehaviour
                 break;
             }
         }
-        //_instantiateHose.GetComponent<CreateHose>();
         _instantiateHose.InstantiateHose();
     }
 }
