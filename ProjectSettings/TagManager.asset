@@ -10,6 +10,7 @@ TagManager:
   - FuelTank
   - SandSource
   - SandIntakeZone
+  - Item
   layers:
   - Default
   - TransparentFX
