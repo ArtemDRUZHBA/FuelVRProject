@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 1886394712220364878}
   - component: {fileID: 5237743625804679930}
   - component: {fileID: 4931748597363711096}
+  - component: {fileID: 8845162160134044141}
   m_Layer: 0
   m_Name: Switch0
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,6 +181,24 @@ MonoBehaviour:
   _fuelColumn: {fileID: 0}
   _fuelColumnLock: 1
   _colController: {fileID: 0}
+--- !u!114 &8845162160134044141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81968681078817675}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &518130186253378123
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,6 +358,7 @@ GameObject:
   - component: {fileID: 5387444710646828951}
   - component: {fileID: 5674485957041316369}
   - component: {fileID: 2462914991721852423}
+  - component: {fileID: 659977136354629447}
   m_Layer: 0
   m_Name: Knob002
   m_TagString: Item
@@ -417,6 +437,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &659977136354629447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737649893627134796}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1112653538886978438
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,9 +650,10 @@ GameObject:
   - component: {fileID: 5148990103906631376}
   - component: {fileID: 3006311850135937890}
   - component: {fileID: 8605023832720290326}
+  - component: {fileID: 8233593073293917666}
   m_Layer: 0
   m_Name: Switch1
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -777,6 +816,24 @@ MonoBehaviour:
   _fuelColumn: {fileID: 0}
   _fuelColumnLock: 1
   _colController: {fileID: 0}
+--- !u!114 &8233593073293917666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4259890207074879119}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &4282354180544442862
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,6 +1104,7 @@ GameObject:
   - component: {fileID: 5053189448934658903}
   - component: {fileID: 3067013344269021331}
   - component: {fileID: 5198113243060191244}
+  - component: {fileID: 7910283618352145065}
   m_Layer: 0
   m_Name: Knob001
   m_TagString: Item
@@ -1125,6 +1183,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7910283618352145065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5494413054187209750}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &5899050303780460687
 GameObject:
   m_ObjectHideFlags: 0
