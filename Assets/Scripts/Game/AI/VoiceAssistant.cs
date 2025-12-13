@@ -21,6 +21,10 @@ public class VoiceAssistant : MonoBehaviour
     private bool _isListening = false;
     private bool _isProcessing = false;
 
+    private bool _playerInside = false;
+
+    public event Action<string> OnTextRecognized;
+
 
     void Start()
     {
@@ -40,18 +44,31 @@ public class VoiceAssistant : MonoBehaviour
 
     void Update()
     {
-        // Начинаем слушать при нажатии пробела
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartListening();
-        }
+        if (!_playerInside)
+            return;
 
-        // Заканчиваем слушать при отпускании пробела
+        if (Input.GetKeyDown(KeyCode.Space))
+            StartListening();
+
         if (Input.GetKeyUp(KeyCode.Space))
+            StopListening();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            _playerInside = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
         {
+            _playerInside = false;
             StopListening();
         }
     }
+
 
     void StartListening()
     {
@@ -140,6 +157,9 @@ public class VoiceAssistant : MonoBehaviour
         if (string.IsNullOrEmpty(text) || _isProcessing) return;
 
         UnityEngine.Debug.Log("Распознано: " + text);
+
+        OnTextRecognized?.Invoke(text);
+
         _isProcessing = true;
         StartCoroutine(SendToGPT(text));
     }
@@ -151,7 +171,6 @@ public class VoiceAssistant : MonoBehaviour
         try
         {
             var obj = JObject.Parse(json);
-            var content = (string)obj["choices"]?[0]?["message"]?["content"];
             return (string)obj["text"] ?? "";
         }
         catch (System.Exception e)
