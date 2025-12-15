@@ -8,10 +8,9 @@ public class FireController : MonoBehaviour
     {
         foreach (var fire in _fires)
             fire.SetActive(false);
-        StartCoroutine(FireTime());
     }
 
-    IEnumerator FireTime()
+    public IEnumerator FireTime()
     {
         for (int i = 0; i < _fires.Length; i++)
         {
