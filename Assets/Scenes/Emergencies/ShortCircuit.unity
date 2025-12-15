@@ -1435,7 +1435,7 @@ PrefabInstance:
     - target: {fileID: 4931748597363711096, guid: 00d6eccac4a796248b5952b6ace171b4, type: 3}
       propertyPath: hoseLeakSpawner
       value: 
-      objectReference: {fileID: 1214961323}
+      objectReference: {fileID: 0}
     - target: {fileID: 4931748597363711096, guid: 00d6eccac4a796248b5952b6ace171b4, type: 3}
       propertyPath: nozzles.Array.size
       value: 4
@@ -1551,7 +1551,7 @@ PrefabInstance:
     - target: {fileID: 8605023832720290326, guid: 00d6eccac4a796248b5952b6ace171b4, type: 3}
       propertyPath: hoseLeakSpawner
       value: 
-      objectReference: {fileID: 1214961323}
+      objectReference: {fileID: 0}
     - target: {fileID: 8605023832720290326, guid: 00d6eccac4a796248b5952b6ace171b4, type: 3}
       propertyPath: nozzles.Array.size
       value: 4
@@ -16874,7 +16874,7 @@ PrefabInstance:
     - target: {fileID: 4931748597363711096, guid: 00d6eccac4a796248b5952b6ace171b4, type: 3}
       propertyPath: hoseLeakSpawner
       value: 
-      objectReference: {fileID: 1214961323}
+      objectReference: {fileID: 0}
     - target: {fileID: 6953426581328045709, guid: 00d6eccac4a796248b5952b6ace171b4, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.70000005
@@ -16942,7 +16942,7 @@ PrefabInstance:
     - target: {fileID: 8605023832720290326, guid: 00d6eccac4a796248b5952b6ace171b4, type: 3}
       propertyPath: hoseLeakSpawner
       value: 
-      objectReference: {fileID: 1214961323}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21354,93 +21354,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fecce3fd978800449aa089ab89c23e8d, type: 3}
   m_PrefabInstance: {fileID: 13605126}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1214961319
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1214961322}
-  - component: {fileID: 1214961321}
-  - component: {fileID: 1214961320}
-  - component: {fileID: 1214961323}
-  m_Layer: 0
-  m_Name: TriggerEmergecy
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1214961320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1214961319}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93e4118624d3ee143a9d31e7b25f22a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EmergencyTrigger
-  car: {fileID: 0}
-  _fuelTank: {fileID: 0}
-  _fuelPistol: {fileID: 0}
-  leakPS: {fileID: 0}
-  _fuelPump: {fileID: 2043069444}
---- !u!65 &1214961321
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1214961319}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 39.4, y: 4.66, z: 17.78}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &1214961322
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1214961319}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.37, y: 0.05, z: 37.21}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1214961323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1214961319}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df0b118ff4b2f9e45bf01fe3d1c3aab3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HoseLeakSpawner
-  hoseObjectName: Hose7
-  hoseEndName: HoseEnd
-  fuelPSPrefab: {fileID: 4033354273237828099, guid: 88f1b469aae40db4888a5cc7249fa6ae, type: 3}
 --- !u!1001 &1216084776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55957,7 +55870,6 @@ SceneRoots:
   - {fileID: 499764197}
   - {fileID: 8741764036036942934}
   - {fileID: 400675806}
-  - {fileID: 1214961322}
   - {fileID: 407286680}
   - {fileID: 1218100526}
   - {fileID: 2100937332}
