@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
@@ -15,8 +16,9 @@ public class CreateFuelPistol : MonoBehaviour
 
     private void Start()
     {
-        InstantiateAndSaveFuelPistol();
+        StartCoroutine(Init());
     }
+
     public void InstantiateAndSaveFuelPistol()
     {
         for (int i = 0; i < 4; i++)
@@ -40,6 +42,14 @@ public class CreateFuelPistol : MonoBehaviour
                 break;
             }
         }
+    }
+    private IEnumerator Init()
+    {
+        InstantiateAndSaveFuelPistol();
+
+        // ждём 1 кадр, чтобы Unity обновил иерархию
+        yield return null;
+
         _instantiateHose.InstantiateHose();
     }
 }

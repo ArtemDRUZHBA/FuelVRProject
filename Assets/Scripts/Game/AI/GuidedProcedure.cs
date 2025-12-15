@@ -3,15 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using UnityEditor;
+using System.Text;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class GuidedProcedure : MonoBehaviour
 {
     [Header("eSpeak settings")]
-    [SerializeField] private string voice = "ru";
-    [SerializeField] private int speed = 140;
-    [SerializeField] private int pitch = 50;
+    [SerializeField] private string apiKey = "72fd1cc60e5a1fbdf17bec63912c4da9c7b89a25c45832cd7a584ad5b167e0d6";
+    [SerializeField] private string voiceId = "qJBO8ZmKp4te7NTtYgzz";
     [SerializeField] private float preSpeakDelay = 0.2f;
 
     [Header("Steps source")]
@@ -26,6 +26,15 @@ public class GuidedProcedure : MonoBehaviour
     // События для UI/логики (подсветка текущего шага, окончание процедуры)
     public event Action<int, string> OnStepShown;
     public event Action OnFinished;
+
+    private AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
+    }
 
     private void Start()
     {
@@ -63,7 +72,7 @@ public class GuidedProcedure : MonoBehaviour
         if (currentIndex >= steps.Count)
         {
             OnFinished?.Invoke();
-            UnityEngine.Debug.Log("GuidedProcedure: процедура завершена.");
+            UnityEngine.Debug.Log("GuidedProcedure: процедура завершена..");
             return;
         }
 
@@ -94,28 +103,38 @@ public class GuidedProcedure : MonoBehaviour
         UnityEngine.Debug.Log("GuidedProcedure: процедура остановлена.");
     }
 
-    private Task SpeakAsync(string text)
+    private async Task SpeakAsync(string text)
     {
-        return Task.Run(() =>
+        string url = $"https://api.elevenlabs.io/v1/text-to-speech/{voiceId}";
+
+        string json = "{\"text\":\"" + text + "\",\"model_id\":\"eleven_multilingual_v2\",\"voice_settings\":{\"stability\":0.5,\"similarity_boost\":0.5},\"output_format\":\"wav\"}";
+        byte[] bodyRaw = Encoding.UTF8.GetBytes(json);
+
+        using (UnityWebRequest request = new UnityWebRequest(url, "POST"))
         {
-            try
+            request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+            request.downloadHandler = new DownloadHandlerBuffer();
+            request.SetRequestHeader("Content-Type", "application/json");
+            request.SetRequestHeader("xi-api-key", apiKey);
+
+            var operation = request.SendWebRequest();
+            while (!operation.isDone)
+                await Task.Yield();
+
+            if (request.result == UnityWebRequest.Result.Success)
             {
-                var psi = new ProcessStartInfo
-                {
-                    FileName = "espeak",
-                    Arguments = $"\"{text}\" -v {voice} -s {speed} -p {pitch}",
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                };
-                using (var proc = Process.Start(psi))
-                {
-                    proc?.WaitForExit();
-                }
+                byte[] audioData = request.downloadHandler.data;
+                string tempPath = System.IO.Path.Combine(Application.persistentDataPath, "tts.mp3");
+                System.IO.File.WriteAllBytes(tempPath, audioData);
+
+                UnityEngine.Debug.Log("MP3 сохранён: " + tempPath);
             }
-            catch (Exception e)
+            else
             {
-                UnityEngine.Debug.LogError($"eSpeak error: {e.Message}");
+                UnityEngine.Debug.LogError("ElevenLabs TTS error: " + request.error + " | " + request.downloadHandler.text);
             }
-        });
+        }
     }
+
+
 }
