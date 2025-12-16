@@ -25819,9 +25819,13 @@ PrefabInstance:
       value: 187.858
       objectReference: {fileID: 0}
     - target: {fileID: 1118358880281460866, guid: 986c3d0d840c193499421d18558ecada, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118358880281460866, guid: 986c3d0d840c193499421d18558ecada, type: 3}
       propertyPath: _instantiateHose
       value: 
-      objectReference: {fileID: 2043069445}
+      objectReference: {fileID: 0}
     - target: {fileID: 1962781300178630692, guid: 986c3d0d840c193499421d18558ecada, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.25
@@ -25918,22 +25922,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 2043069441}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d5de925607ff9e46beb7e42460984f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CreateFuelPistol
---- !u!114 &2043069445 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4827782361285723227, guid: 986c3d0d840c193499421d18558ecada, type: 3}
-  m_PrefabInstance: {fileID: 2043069441}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8862e32a5785b94fb09a1a2a9ca77e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CreateHose
 --- !u!1001 &2057389034
 PrefabInstance:
   m_ObjectHideFlags: 0
