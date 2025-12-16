@@ -44,10 +44,10 @@ public class VoiceAssistant : MonoBehaviour
 
     void Update()
     {
+        UnityEngine.Debug.Log("UPDATE OK");
         if (!_playerInside)
             return;
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        
             StartListening();
 
         if (Input.GetKeyUp(KeyCode.Space))
@@ -57,7 +57,7 @@ public class VoiceAssistant : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-            _playerInside = true;
+           _playerInside = true;
     }
 
     private void OnTriggerExit(Collider other)

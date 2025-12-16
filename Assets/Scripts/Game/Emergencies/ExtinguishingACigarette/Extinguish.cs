@@ -49,10 +49,19 @@ public class Extinguish : MonoBehaviour
         if (_finishTriggered)
             return;
 
-        if (_keywords.Any(word => text.ToLower().Contains(word)))
+        string t = text.ToLower().Trim();
+
+        string[] words = t.Split(' ', System.StringSplitOptions.RemoveEmptyEntries);
+
+        foreach (string w in words)
         {
-            _finishTriggered = true;
-            _animator.Play(_animFinish);
+            if (_keywords.Any(k => w.Contains(k)))
+            {
+                UnityEngine.Debug.Log("Запущена последняя анимация");
+                _finishTriggered = true;
+                _animator.Play(_animFinish);
+                return;
+            }
         }
     }
 }
