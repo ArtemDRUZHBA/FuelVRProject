@@ -10,8 +10,8 @@ using Newtonsoft.Json.Linq;
 
 public class VoiceAssistant : MonoBehaviour
 {
-    public string voskModelPath = "vosk-model-ru-0.22"; // Папка в StreamingAssets
-    public string openAiApiKey = "sk-9ed17c44de6844aa9505403322607801"; // Вставь свой ключ
+    public string voskModelPath = "vosk-model-ru-0.22"; 
+    public string openAiApiKey = "sk-9ed17c44de6844aa9505403322607801";
     private VoskRecognizer recognizer;
     private Model model;
     private AudioClip micClip;
@@ -100,11 +100,9 @@ public class VoiceAssistant : MonoBehaviour
         _isListening = false;
         Microphone.End(null);
 
-        // Получаем финальный результат от Vosk
         string final = recognizer.FinalResult();
         HandleRecognizedText(final);
 
-        // Сбросим распознаватель, чтобы не тянуть старые partial
         recognizer?.Reset();
 
         UnityEngine.Debug.Log("Окончание прослушивания");
@@ -232,7 +230,7 @@ public class VoiceAssistant : MonoBehaviour
         if (string.IsNullOrWhiteSpace(text)) return;
 
         ProcessStartInfo psi = new ProcessStartInfo();
-        psi.FileName = @"C:\Program Files\eSpeak NG\espeak-ng.exe"; // путь к eSpeak NG
+        psi.FileName = @"C:\Program Files\eSpeak NG\espeak-ng.exe";
         psi.Arguments = $"\"{text}\" -v ru";
         psi.UseShellExecute = false;
         psi.CreateNoWindow = true;
