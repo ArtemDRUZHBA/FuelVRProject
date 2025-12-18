@@ -1,12 +1,13 @@
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Networking;
 using Vosk;
-using Newtonsoft.Json.Linq;
 
 public class VoiceAssistant : MonoBehaviour
 {
@@ -44,21 +45,39 @@ public class VoiceAssistant : MonoBehaviour
 
     void Update()
     {
+        UnityEngine. Debug.Log("Mic pos: " + Microphone.GetPosition(null));
+
         UnityEngine.Debug.Log("UPDATE OK");
+
         if (!_playerInside)
             return;
-        
-            StartListening();
+        UnityEngine.Debug.Log("Внутри");
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            UnityEngine.Debug.Log("SPACE pressed");
+            StartListening();
+        }
+
+        if (Keyboard.current != null && Keyboard.current.spaceKey.wasReleasedThisFrame)
+        {
+            UnityEngine.Debug.Log("SPACE released");
             StopListening();
+        }
     }
+
+
+
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-           _playerInside = true;
+
+        if (other.GetComponentInParent<Unity.XR.CoreUtils.XROrigin>() != null)
+        {
+            _playerInside = true;
+        }
     }
+
 
     private void OnTriggerExit(Collider other)
     {
@@ -79,6 +98,16 @@ public class VoiceAssistant : MonoBehaviour
             return;
         }
 
+        UnityEngine.Debug.Log("StartListening вызван"); 
+        var mic = Microphone.Start(null, false, 5, 16000); 
+        if (mic == null) 
+        { 
+            UnityEngine.Debug.LogError(" Микрофон НЕ ЗАПУСТИЛСЯ"); 
+            return; 
+        } else 
+        { 
+            UnityEngine.Debug.Log("Микрофон запущен");
+        }
         string micName = Microphone.devices[0];
         UnityEngine.Debug.Log("Используем устройство: " + micName);
 

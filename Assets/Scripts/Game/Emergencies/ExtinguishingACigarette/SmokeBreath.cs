@@ -4,22 +4,30 @@ using UnityEngine;
 public class SmokeBreath : MonoBehaviour
 {
     [SerializeField] private ParticleSystem smokeSystem;
+    private Coroutine routine;
 
     void Start()
     {
         smokeSystem.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
-        StartCoroutine(SmokeRoutine());
+        routine = StartCoroutine(SmokeRoutine());
     }
 
     IEnumerator SmokeRoutine()
     {
-        // ждём первые 10 секунд перед началом дыхания
         yield return new WaitForSeconds(20f);
 
         while (true)
         {
-            smokeSystem.Play();   // один выдох
-            yield return new WaitForSeconds(8f); // пауза между выдохами
+            smokeSystem.Play();
+            yield return new WaitForSeconds(8f);
         }
+    }
+
+    public void StopSmoke()
+    {
+        if (routine != null)
+            StopCoroutine(routine);
+
+        smokeSystem.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
 }
