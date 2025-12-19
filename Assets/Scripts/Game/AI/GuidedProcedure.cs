@@ -23,7 +23,6 @@ public class GuidedProcedure : MonoBehaviour
     private bool awaitingUser = false;
     private bool speaking = false;
 
-    // События для UI/логики (подсветка текущего шага, окончание процедуры)
     public event Action<int, string> OnStepShown;
     public event Action OnFinished;
 

@@ -1,17 +1,18 @@
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Networking;
 using Vosk;
-using Newtonsoft.Json.Linq;
 
 public class VoiceAssistant : MonoBehaviour
 {
-    public string voskModelPath = "vosk-model-ru-0.22"; // Папка в StreamingAssets
-    public string openAiApiKey = "sk-9ed17c44de6844aa9505403322607801"; // Вставь свой ключ
+    public string voskModelPath = "vosk-model-ru-0.22"; 
+    public string openAiApiKey = "sk-9ed17c44de6844aa9505403322607801";
     private VoskRecognizer recognizer;
     private Model model;
     private AudioClip micClip;
@@ -44,21 +45,39 @@ public class VoiceAssistant : MonoBehaviour
 
     void Update()
     {
+        UnityEngine. Debug.Log("Mic pos: " + Microphone.GetPosition(null));
+
+        UnityEngine.Debug.Log("UPDATE OK");
+
         if (!_playerInside)
             return;
+        UnityEngine.Debug.Log("Внутри");
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            UnityEngine.Debug.Log("SPACE pressed");
             StartListening();
+        }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Keyboard.current != null && Keyboard.current.spaceKey.wasReleasedThisFrame)
+        {
+            UnityEngine.Debug.Log("SPACE released");
             StopListening();
+        }
     }
+
+
+
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+
+        if (other.GetComponentInParent<Unity.XR.CoreUtils.XROrigin>() != null)
+        {
             _playerInside = true;
+        }
     }
+
 
     private void OnTriggerExit(Collider other)
     {
@@ -79,6 +98,16 @@ public class VoiceAssistant : MonoBehaviour
             return;
         }
 
+        UnityEngine.Debug.Log("StartListening вызван"); 
+        var mic = Microphone.Start(null, false, 5, 16000); 
+        if (mic == null) 
+        { 
+            UnityEngine.Debug.LogError(" Микрофон НЕ ЗАПУСТИЛСЯ"); 
+            return; 
+        } else 
+        { 
+            UnityEngine.Debug.Log("Микрофон запущен");
+        }
         string micName = Microphone.devices[0];
         UnityEngine.Debug.Log("Используем устройство: " + micName);
 
@@ -100,11 +129,9 @@ public class VoiceAssistant : MonoBehaviour
         _isListening = false;
         Microphone.End(null);
 
-        // Получаем финальный результат от Vosk
         string final = recognizer.FinalResult();
         HandleRecognizedText(final);
 
-        // Сбросим распознаватель, чтобы не тянуть старые partial
         recognizer?.Reset();
 
         UnityEngine.Debug.Log("Окончание прослушивания");
@@ -232,7 +259,7 @@ public class VoiceAssistant : MonoBehaviour
         if (string.IsNullOrWhiteSpace(text)) return;
 
         ProcessStartInfo psi = new ProcessStartInfo();
-        psi.FileName = @"C:\Program Files\eSpeak NG\espeak-ng.exe"; // путь к eSpeak NG
+        psi.FileName = @"C:\Program Files\eSpeak NG\espeak-ng.exe";
         psi.Arguments = $"\"{text}\" -v ru";
         psi.UseShellExecute = false;
         psi.CreateNoWindow = true;

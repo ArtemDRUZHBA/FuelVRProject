@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Extinguish : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class Extinguish : MonoBehaviour
         _voiceAssistant.OnTextRecognized += OnTextRecognized;
 
         _animator.Play(_animStart);
+        Debug.Log("VoiceAssistant найден: " + (_voiceAssistant != null));
 
     }
 
@@ -49,10 +51,42 @@ public class Extinguish : MonoBehaviour
         if (_finishTriggered)
             return;
 
-        if (_keywords.Any(word => text.ToLower().Contains(word)))
+        string t = text.ToLower().Trim();
+
+        string[] words = t.Split(' ', System.StringSplitOptions.RemoveEmptyEntries);
+
+        foreach (string w in words)
         {
+            if (_keywords.Any(k => w.Contains(k)))
+            {
+                UnityEngine.Debug.Log("Запущена последняя анимация");
+                _finishTriggered = true;
+
+                FindObjectOfType<SmokeBreath>()?.StopSmoke();
+
+                _animator.Play(_animFinish);
+                return;
+            }
+        }
+    }
+    private void Update()
+    {
+        if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            Debug.Log("SPACE pressed запускаю финальную анимацию вручную");
+
+            // Чтобы не запускать повторно
+            if (_finishTriggered)
+                return;
+
             _finishTriggered = true;
+
+            // Останавливаем дым, как в обычном сценарии
+            FindObjectOfType<SmokeBreath>()?.StopSmoke();
+
+            // Запускаем финальную анимацию
             _animator.Play(_animFinish);
         }
     }
+
 }

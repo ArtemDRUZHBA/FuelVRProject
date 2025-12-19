@@ -14,13 +14,10 @@ public class FireController : MonoBehaviour
     {
         for (int i = 0; i < _fires.Length; i++)
         {
-            // включаем текущий
             _fires[i].SetActive(true);
 
-            // ждём 5 секунд
             yield return new WaitForSeconds(5f);
 
-            // выключаем текущий
             _fires[i].SetActive(false);
         }
     }
